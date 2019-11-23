@@ -155,6 +155,92 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-note" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/23/note/">note</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/23/note/" class="archive-article-date">
+  	<time datetime="2019-11-23T13:12:42.060Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="10084-Spring自动装配注解方式"><a href="#10084-Spring自动装配注解方式" class="headerlink" title="&#10084;Spring自动装配注解方式"></a>&#10084;Spring自动装配注解方式</h2><h4 id="在配置文件中beans-xml中添加context约束"><a href="#在配置文件中beans-xml中添加context约束" class="headerlink" title="在配置文件中beans.xml中添加context约束"></a>在配置文件中beans.xml中添加context约束</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xmlns:context="http://www.springframework.org/schema/context"</span><br><span class="line">http://www.springframework.org/schema/context</span><br><span class="line">https://www.springframework.org/schema/context/spring-context.xsd</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:annotation-config</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="10084-自动装配常用注解"><a href="#10084-自动装配常用注解" class="headerlink" title="&#10084;自动装配常用注解"></a>&#10084;自动装配常用注解</h2><p>@Autowired  和@resource</p>
+<ul>
+<li>Autowired默认先按<font color="red">byType</font>，如果发现找到多个bean，则，又按照<font color="pink">byName</font>方式比对，如果还有多个，则报出异常。</li>
+<li>默认按 <font color="green">byName</font>自动注入,如果找不到再按<font color="blue">byType</font>找bean,如果还是找不到则抛异常，无论按byName还是byType如果找到多个，则抛异常。  </li>
+</ul>
+<h2 id="10084-spring常用依赖"><a href="#10084-spring常用依赖" class="headerlink" title="&#10084;spring常用依赖"></a>&#10084;spring常用依赖</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--spring-core配置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.0.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--spring-context配置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.0.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--junit测试配置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.11<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="spring-IOC容器"><a href="#spring-IOC容器" class="headerlink" title="spring IOC容器"></a>spring IOC容器</h2><p> 依赖注入（DI）和控制反转（IOC）是从不同的角度的描述的同一件事情，指就是<strong>通过引入IOC容器，利用依赖关系注入的方式，实现对象之间的解耦</strong>。 </p>
+<p> <img src="https://img-blog.csdn.net/20180406194740168?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xvdmVfZXZlcnlib2R5/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"> </p>
+<p> <img src="https://img-blog.csdn.net/20180406194850470?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xvdmVfZXZlcnlib2R5/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"> </p>
+<p> <img src="https://img-blog.csdn.net/20180406194918287?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xvdmVfZXZlcnlib2R5/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"> </p>
+<h3 id="插入连接方式-一对-lt-gt"><a href="#插入连接方式-一对-lt-gt" class="headerlink" title="插入连接方式 一对&lt;&gt;"></a>插入连接方式 一对&lt;&gt;</h3><p>&lt;&lt;<a href="http://www.baidu.com&gt;&gt;" target="_blank" rel="noopener">www.baidu.com&gt;&gt;</a></p>
+<ul>
+<li>列表文字</li>
+<li>Markdown使用列表</li>
+</ul>
+<h3 id="表格使用方式"><a href="#表格使用方式" class="headerlink" title="表格使用方式"></a>表格使用方式</h3><table><tr><td bgcolor="orange">赵超|20岁|热爱自然</td></tr></table>
+
+
+
+
+
+<h2 id="amp-9730spring注解方式"><a href="#amp-9730spring注解方式" class="headerlink" title="&amp;#9730spring注解方式"></a>&amp;#9730spring注解方式</h2><h4 id="9730-配置文件中添加"><a href="#9730-配置文件中添加" class="headerlink" title="&#9730;配置文件中添加"></a>&#9730;配置文件中添加</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:annotation-config</span>/&gt;</span></span><br><span class="line"><span class="comment">&lt;!--指定要扫描的包，在该包下的注解会生效--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"com.zc"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="9730-spring在实体类是使用"><a href="#9730-spring在实体类是使用" class="headerlink" title="&#9730;spring在实体类是使用"></a>&#9730;spring在实体类是使用</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//等价于<span class="tag">&lt;<span class="name">bean</span>&gt;</span></span><br><span class="line">@Component</span><br><span class="line">@Scope("singleton")</span><br><span class="line">public class User &#123;</span><br><span class="line"></span><br><span class="line">    private String name;</span><br><span class="line"></span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line">    //等价于<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    @Value("你好")</span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/23/note/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-在个人博客中插入视频" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
