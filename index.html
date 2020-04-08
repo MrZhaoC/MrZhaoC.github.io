@@ -155,19 +155,203 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-note" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Lombok快速学习手册" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/23/note/">note</a>
+      <a class="article-title" href="/2020/04/08/Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/">Lombok快速学习手册</a>
     </h1>
   
 
         
-        <a href="/2019/11/23/note/" class="archive-article-date">
+        <a href="/2020/04/08/Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" class="archive-article-date">
+  	<time datetime="2020-04-08T06:34:00.045Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Lombok快速学习手册"><a href="#Lombok快速学习手册" class="headerlink" title="Lombok快速学习手册"></a>Lombok快速学习手册</h2><h3 id="一、什么是lombok？"><a href="#一、什么是lombok？" class="headerlink" title="一、什么是lombok？"></a>一、什么是lombok？</h3><p> Lombok是一个很牛批的<strong>插件</strong>（本质是个<strong>Java库</strong>），项目里一旦引入了Lombok神器之后，<strong>只要程序中使用相关注解</strong>，那么你项目中所有诸如：对象的构造函数、 <code>equals()</code>方法，属性的 <code>get()/set()</code>方法等等，这些没有技术含量的代码统统都不用写了，Lombok帮你搞定一切，全部帮你自动生成！</p>
+<h3 id="二、怎样使用lombok？"><a href="#二、怎样使用lombok？" class="headerlink" title="二、怎样使用lombok？"></a>二、怎样使用lombok？</h3><p>这里我们使用的开发环境是  IntelliJ IDEA ，使用maven创建项目。</p>
+<ul>
+<li><p>首先我们要在开发环境中安装lombok插件</p>
+<p><img src="C:%5CUsers%5C%E8%B5%B5%E8%B6%85%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200408124846456.png" alt="image-20200408124846456"></p>
+</li>
+<li><p>然后我们要在.pom文件中导入lombok依赖</p>
+<p><img src="C:%5CUsers%5C%E8%B5%B5%E8%B6%85%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200408125208100.png" alt="image-20200408125208100"></p>
+</li>
+</ul>
+<h3 id="三、常用注解说明"><a href="#三、常用注解说明" class="headerlink" title="三、常用注解说明"></a>三、常用注解说明</h3><h4 id="1、-Data"><a href="#1、-Data" class="headerlink" title="1、@Data"></a>1、<code>@Data</code></h4><p> 作用于类上，是以下注解的集合：<code>@ToString @EqualsAndHashCode @Getter @Setter @RequiredArgsConstructor</code>，当类的属性中没有必须属性（即使用<code>final</code>关键字声明的属性），那么会生成一个无参构造器。否则生成一个由所有被<code>final</code>关键字（或者将标记为@NoNull的属性生成一个构造器 ）声明属性的有参构造函数。 </p>
+<ul>
+<li><p>没有<code>final</code>声明的属性</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//测试</span></span><br><span class="line">Student student=<span class="keyword">new</span> Student();</span><br><span class="line">        student.setId(<span class="number">123</span>);</span><br><span class="line">        student.setName(<span class="string">"lombok"</span>);</span><br><span class="line">        System.out.println(student.toString());</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>有<code>final</code>声明的属性</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//测试</span></span><br><span class="line">Student student=<span class="keyword">new</span> Student(<span class="string">"lombok"</span>);</span><br><span class="line">        student.setId(<span class="number">123</span>);</span><br><span class="line">        System.out.println(student.toString());</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、-Getter和Setter"><a href="#2、-Getter和Setter" class="headerlink" title="2、@Getter和Setter"></a>2、<code>@Getter和Setter</code></h4><p> 为属性生成对应的<code>get()</code>和``set()`,声明在类上的时候为所有属性生成对应方法，声明在某个属性的时候，为这个属性生成对应方法。 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Setter</span></span><br><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="keyword">private</span>  String name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//测试</span></span><br><span class="line">Student student=<span class="keyword">new</span> Student();</span><br><span class="line">        student.setId(<span class="number">123</span>);</span><br><span class="line">        student.setName(<span class="string">"lombok"</span>);</span><br><span class="line">        System.out.println(student.getName());</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、Builder"><a href="#3、Builder" class="headerlink" title="3、Builder"></a>3、<code>Builder</code></h4><p> 对象的创建即可使用 <strong>链式表达</strong> 的方式<strong>一行代码</strong>完成， 看到这里，如果你学过<strong>设计模式</strong>中的 <strong>“建造者模式”</strong> 的话，一定能猜到 <code>@Builder</code>注解就是一个典型的“建造者模式”的实现案例！ </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Builder</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="keyword">private</span>  String name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//测试</span></span><br><span class="line"> Student student=Student.builder().id(<span class="number">123</span>).name(<span class="string">"lombok"</span>).build();</span><br></pre></td></tr></table></figure>
+
+<h4 id="4、构造函数注解"><a href="#4、构造函数注解" class="headerlink" title="4、构造函数注解"></a>4、构造函数注解</h4><ol>
+<li><code>@AllArgsConstructor（全参构造）</code></li>
+<li><code>@NoArgsConstructor （空参构造）</code></li>
+<li><code>@RequiredArgsConstructor</code>（部分参数构造，参数使用<strong><code>final</code></strong>关键字声明）</li>
+</ol>
+<p>注意这里 <code>@RequiredArgsConstructor</code>和 <code>@NoArgsConstructor</code>不能同时出现，因为当一个属性被final关键字声明后，创建对象的时候一定要给这个属性传参，所以可以理解这两个注解是冲突的。</p>
+<ul>
+<li><p>空参和全参</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="keyword">private</span>  String name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//测试</span></span><br><span class="line">Student student=<span class="keyword">new</span> Student();</span><br><span class="line">        Student student1=<span class="keyword">new</span> Student(<span class="number">123</span>,<span class="string">"lombok"</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>部分参和全参</p>
+<p>这里要注意，部分参使用需要<strong><code>final</code></strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@RequiredArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//测试</span></span><br><span class="line">Student student=<span class="keyword">new</span> Student(<span class="string">"lombok"</span>);</span><br><span class="line">        Student student1=<span class="keyword">new</span> Student(<span class="number">123</span>,<span class="string">"lombok"</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="5、-NonNull"><a href="#5、-NonNull" class="headerlink" title="5、@NonNull"></a>5、<code>@NonNull</code></h4><p> Lombok的 <code>@NonNull</code>注解可以自动帮我们<strong>避免空指针判断</strong>。主要作用于<strong>成员变量和参数</strong>中，标识不能为空，否则抛出空指针异常。 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        testNonNull(<span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//测试函数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">testNonNull</span><span class="params">(@NonNull String str)</span></span>&#123;</span><br><span class="line">    System.out.println(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行之后，控制台会报错!</p>
+<p><img src="C:%5CUsers%5C%E8%B5%B5%E8%B6%85%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200408142232118.png" alt="image-20200408142232118"></p>
+<h4 id="6、-Cleanup"><a href="#6、-Cleanup" class="headerlink" title="6、@Cleanup"></a>6、<code>@Cleanup</code></h4><p> 自动关闭资源，针对实现了java.io.Closeable接口的对象有效，如：<strong>典型的IO流对象</strong>，也就是不需要在<strong>finally</strong>子句里面手动关闭资源了。 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testCleanup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="meta">@Cleanup</span> BufferedReader br = <span class="keyword">null</span>;</span><br><span class="line">        <span class="meta">@Cleanup</span> FileReader fileReader = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            fileReader = <span class="keyword">new</span> FileReader(<span class="string">"hehe.txt"</span>);</span><br><span class="line">            br = <span class="keyword">new</span> BufferedReader(fileReader);</span><br><span class="line">            <span class="comment">//中间一些流操作</span></span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7、-SneakyThrows"><a href="#7、-SneakyThrows" class="headerlink" title="7、@SneakyThrows"></a>7、<code>@SneakyThrows</code></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SneakyThrows</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSneakyThrows</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="meta">@Cleanup</span> BufferedReader br = <span class="keyword">null</span>;</span><br><span class="line">       <span class="meta">@Cleanup</span> FileReader fileReader = <span class="keyword">null</span>;</span><br><span class="line">           fileReader = <span class="keyword">new</span> FileReader(<span class="string">"hehe.txt"</span>);</span><br><span class="line">           br = <span class="keyword">new</span> BufferedReader(fileReader);</span><br><span class="line">           <span class="comment">//中间一些流操作</span></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="常用注解汇总表"><a href="#常用注解汇总表" class="headerlink" title="常用注解汇总表"></a>常用注解汇总表</h3><table>
+<thead>
+<tr>
+<th><strong>注解名</strong></th>
+<th align="left"><strong>作用</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@Setter</td>
+<td align="left">生成setter方法,final变量不包含</td>
+</tr>
+<tr>
+<td>@Getter</td>
+<td align="left">生成getter方法,final变量不包含</td>
+</tr>
+<tr>
+<td>@NoArgsConstructor</td>
+<td align="left">生成空参构造</td>
+</tr>
+<tr>
+<td>@AllArgsConstructor</td>
+<td align="left">生成全部参数构造</td>
+</tr>
+<tr>
+<td>@RequiredArgsConstructor</td>
+<td align="left">将标记为@NoNull的属性生成一个构造器</td>
+</tr>
+<tr>
+<td>@ToString</td>
+<td align="left">生成所有属性的toString()方法</td>
+</tr>
+<tr>
+<td>@EqualsAndHashCode</td>
+<td align="left">生成equals()方法和hashCode方法</td>
+</tr>
+<tr>
+<td>@Data(常用)</td>
+<td align="left">@Data直接修饰POJO or beans， getter所有的变量，setter所有不为final的变量。如果你不需要默认的生成方式，直接填写你需要的annotation的就可以了。默认生成的所有的annotation都是public的，如果需要不同权限修饰符可以使用AccessLevel.NONE选项。当然@Data 也可以使用staticConstructor选项生成一个静态方法。 =@Setter+@Getter+@EqualsAndHashCode+@NoArgsConstructor</td>
+</tr>
+<tr>
+<td>@Builder</td>
+<td align="left">构造Builder模式的结构。通过内部类Builder()进行构建对象。</td>
+</tr>
+<tr>
+<td>@Value</td>
+<td align="left">与@Data相对应的@Value， 两个annotation的主要区别就是如果变量不加@NonFinal ，@Value会给所有的弄成final的。当然如果是final的话，就没有set方法了。</td>
+</tr>
+<tr>
+<td>@Synchronized</td>
+<td align="left">同步方法</td>
+</tr>
+<tr>
+<td>@Cleanup</td>
+<td align="left">自动调用close方法关闭资源</td>
+</tr>
+<tr>
+<td>@SneakyThrows</td>
+<td align="left">可以对受检异常进行捕捉并抛出</td>
+</tr>
+</tbody></table>
+<h5 id="以上就是关于lombok的学习啦！"><a href="#以上就是关于lombok的学习啦！" class="headerlink" title="以上就是关于lombok的学习啦！"></a>以上就是关于<code>lombok</code>的学习啦！</h5>  <p align="right">2020-4-8</p>  
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/08/Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-spring-IOC学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/23/spring-IOC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">spring-IOC学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/23/spring-IOC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
   	<time datetime="2019-11-23T13:12:42.060Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-23</time>
 </a>
         
@@ -211,7 +395,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/23/note/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/11/23/spring-IOC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
         </p>
       
 
@@ -393,70 +577,6 @@
 
 
   
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2019-10-17T10:13:08.887Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h2 id="欢迎大家来的我的博客！"><a href="#欢迎大家来的我的博客！" class="headerlink" title=" 欢迎大家来的我的博客！"></a> 欢迎大家来的我的博客！</h2><h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p> 虽然只是。。。。</p>
-<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p> 欢迎再来。。。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -542,7 +662,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 John Doe
+    		&copy; 2020 John Doe
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
