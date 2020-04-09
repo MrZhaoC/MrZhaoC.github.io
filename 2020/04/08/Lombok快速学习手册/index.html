@@ -5,22 +5,23 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="https://mrzhaoc.github.io">
   <title>Lombok快速学习手册 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Lombok快速学习手册一、什么是lombok？ Lombok是一个很牛批的插件（本质是个Java库），项目里一旦引入了Lombok神器之后，只要程序中使用相关注解，那么你项目中所有诸如：对象的构造函数、 equals()方法，属性的 get()&#x2F;set()方法等等，这些没有技术含量的代码统统都不用写了，Lombok帮你搞定一切，全部帮你自动生成！ 二、怎样使用lombok？这里我们使用的开发环境">
+<meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lombok快速学习手册">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;08&#x2F;Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;2020&#x2F;04&#x2F;08&#x2F;Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Lombok快速学习手册一、什么是lombok？ Lombok是一个很牛批的插件（本质是个Java库），项目里一旦引入了Lombok神器之后，只要程序中使用相关注解，那么你项目中所有诸如：对象的构造函数、 equals()方法，属性的 get()&#x2F;set()方法等等，这些没有技术含量的代码统统都不用写了，Lombok帮你搞定一切，全部帮你自动生成！ 二、怎样使用lombok？这里我们使用的开发环境">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;08&#x2F;Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C&#x2F;F:%5Cmyblog%5Csource%5Cimg%5Cimage-20200408124846456.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;08&#x2F;Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C&#x2F;F:%5Cmyblog%5Csource%5Cimg%5Cimage-20200408125208100.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;08&#x2F;Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C&#x2F;F:%5Cmyblog%5Csource%5Cimg%5Cimage-20200408142232118.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;2020&#x2F;04&#x2F;08&#x2F;Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C&#x2F;F:%5Cmyblog%5Csource%5Cimg%5Cimage-20200408124846456.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;2020&#x2F;04&#x2F;08&#x2F;Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C&#x2F;F:%5Cmyblog%5Csource%5Cimg%5Cimage-20200408125208100.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;2020&#x2F;04&#x2F;08&#x2F;Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C&#x2F;F:%5Cmyblog%5Csource%5Cimg%5Cimage-20200408142232118.png">
 <meta property="og:updated_time" content="2020-04-09T07:22:37.259Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;08&#x2F;Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C&#x2F;F:%5Cmyblog%5Csource%5Cimg%5Cimage-20200408124846456.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;2020&#x2F;04&#x2F;08&#x2F;Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C&#x2F;F:%5Cmyblog%5Csource%5Cimg%5Cimage-20200408124846456.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -54,6 +55,8 @@
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Mr.Zhao</a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">zc�Ĳ���</p>
 		
 
 		<nav class="header-menu">
@@ -114,6 +117,8 @@
 			<hgroup>
 			  <h1 class="header-author js-header-author">Mr.Zhao</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>zc�Ĳ���<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -381,7 +386,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/08/Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mrzhaoc.github.io/2020/04/08/Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -440,7 +445,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 John Doe
+    		&copy; 2020 �Գ�
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
