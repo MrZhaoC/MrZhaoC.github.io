@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://mrzhaoc.github.io">
-  <title>videod | Hexo</title>
+  <title>简单实现验证码登录 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;embed type=”application&#x2F;x-shockwave-flash” src=”https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1p7411y7aQ&#x2F;&amp;quot; id=”movie_player” name=”movie_player” bgcolor=”#FFFFFF” quality=”high” allowfullscreen=”true” fla">
+  <meta name="description" content="简单实现验证码登录 开发环境  idea创建maven-webapp项目 导入相关依赖   这里我们主要通过servlet和jsp实现，虽然有一些落后，但是一步步来嘛  首先创建一个servlet并编写相关代码 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="videod">
-<meta property="og:url" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;2020&#x2F;04&#x2F;13&#x2F;videod&#x2F;index.html">
+<meta property="og:title" content="简单实现验证码登录">
+<meta property="og:url" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;2020&#x2F;04&#x2F;13&#x2F;%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="&amp;lt;embed type=”application&#x2F;x-shockwave-flash” src=”https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1p7411y7aQ&#x2F;&amp;quot; id=”movie_player” name=”movie_player” bgcolor=”#FFFFFF” quality=”high” allowfullscreen=”true” fla">
+<meta property="og:description" content="简单实现验证码登录 开发环境  idea创建maven-webapp项目 导入相关依赖   这里我们主要通过servlet和jsp实现，虽然有一些落后，但是一步步来嘛  首先创建一个servlet并编写相关代码 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-13T00:17:08.695Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;2020&#x2F;04&#x2F;13&#x2F;%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95&#x2F;C:%5CUsers%5C%E8%B5%B5%E8%B6%85%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200413165639992.png">
+<meta property="og:updated_time" content="2020-04-13T08:56:58.323Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;2020&#x2F;04&#x2F;13&#x2F;%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95&#x2F;C:%5CUsers%5C%E8%B5%B5%E8%B6%85%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200413165639992.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -153,37 +155,52 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-videod" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-简单实现验证码登录" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      videod
+      简单实现验证码登录
     </h1>
   
 
         
-        <a href="/2020/04/13/videod/" class="archive-article-date">
-  	<time datetime="2020-04-13T00:12:11.462Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
+        <a href="/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/" class="archive-article-date">
+  	<time datetime="2020-04-13T08:56:58.138Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&lt;embed</p>
-<p>type=”application/x-shockwave-flash”</p>
-<p>src=”<a href="https://www.bilibili.com/video/BV1p7411y7aQ/&quot;" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1p7411y7aQ/&quot;</a></p>
-<p>id=”movie_player”</p>
-<p>name=”movie_player”</p>
-<p>bgcolor=”#FFFFFF”</p>
-<p>quality=”high”</p>
-<p>allowfullscreen=”true”</p>
-<p>flashvars=”isShowRelatedVideo=false&amp;showAd=0&amp;show_pre=1&amp;show_next=1&amp;isAutoPlay=false&amp;isDebug=false&amp;UserID=&amp;winType=interior&amp;playMovie=true&amp;MM</p>
-<p>Control=false&amp;MMout=false&amp;RecordCode=1001,1002,1003,1004,1005,1006,2001,3001,3002,3003,3004,3005,3007,3008,9999”</p>
-<p>pluginspage=”<a href="http://www.macromedia.com/go/getflashplayer&quot;" target="_blank" rel="noopener">http://www.macromedia.com/go/getflashplayer&quot;</a><br>width=”764”<br>height=”500”&gt;</p>
+        <h2 id="简单实现验证码登录"><a href="#简单实现验证码登录" class="headerlink" title="简单实现验证码登录"></a>简单实现验证码登录</h2><ol>
+<li><p>开发环境</p>
+<ul>
+<li>idea创建maven-webapp项目</li>
+<li>导入相关依赖</li>
+</ul>
+</li>
+<li><p>这里我们主要通过servlet和jsp实现，虽然有一些落后，但是一步步来嘛</p>
+<ul>
+<li><p>首先创建一个servlet并编写相关代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">yzm</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        doGet(request,response);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置浏览器不缓存</span></span><br><span class="line">        response.setHeader(<span class="string">"pragma"</span>,<span class="string">"no-cache"</span>);</span><br><span class="line">        response.setHeader(<span class="string">"cache-control"</span>,<span class="string">"no-cache"</span>);</span><br><span class="line">        response.setHeader(<span class="string">"expires"</span>,<span class="string">"0"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义验证码边框的长和宽</span></span><br><span class="line">        <span class="keyword">int</span> width=<span class="number">85</span>;</span><br><span class="line">        <span class="keyword">int</span> height=<span class="number">40</span>;</span><br><span class="line">        <span class="comment">//创建一张图片对象</span></span><br><span class="line">        BufferedImage image=<span class="keyword">new</span> BufferedImage(width,height,BufferedImage.TYPE_INT_RGB);</span><br><span class="line">        <span class="comment">//得到图片的绘制环境</span></span><br><span class="line">        Graphics g=image.createGraphics();</span><br><span class="line">        <span class="comment">//设置图片背景颜色</span></span><br><span class="line">        g.setColor(getRandomColor(<span class="number">180</span>,<span class="number">250</span>));</span><br><span class="line">        <span class="comment">//绘制矩形区域</span></span><br><span class="line">        g.fillRect(<span class="number">0</span>,<span class="number">0</span>, width,height);</span><br><span class="line">        <span class="comment">//设置字体</span></span><br><span class="line">        g.setFont(<span class="keyword">new</span> Font(<span class="string">"宋体"</span>,Font.ITALIC,<span class="number">40</span>));<span class="comment">//1 字体 2 斜体 3 字体大小</span></span><br><span class="line">        <span class="comment">//随机产生一个四位数字</span></span><br><span class="line">        Random random=<span class="keyword">new</span> Random();</span><br><span class="line">        String sRand=<span class="string">""</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</span><br><span class="line">            String rand=String.valueOf(random.nextInt(<span class="number">10</span>));<span class="comment">//产生0-9随机数</span></span><br><span class="line">            sRand+=rand;</span><br><span class="line">            g.setColor(<span class="keyword">new</span> Color(<span class="number">20</span>+random.nextInt(<span class="number">80</span>),<span class="number">20</span>+random.nextInt(<span class="number">100</span>),<span class="number">20</span>+random.nextInt(<span class="number">90</span>)));</span><br><span class="line">            <span class="comment">//将随机书画在图片上</span></span><br><span class="line">            g.drawString(rand,<span class="number">10</span>+i*<span class="number">15</span>,<span class="number">34</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//干扰线</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;<span class="number">12</span>;k++)&#123;</span><br><span class="line">            <span class="keyword">int</span> x=random.nextInt(width-<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">int</span> y=random.nextInt(height-<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> x1=random.nextInt(width-<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">int</span> y1=random.nextInt(height-<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">            g.drawLine(x,y,x1,y1);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//将产生的验证码保存在session中，以便做验证时使用</span></span><br><span class="line">        request.getSession().setAttribute(<span class="string">"yzm"</span>,sRand);</span><br><span class="line">        <span class="comment">//是图像生效</span></span><br><span class="line">        g.dispose();</span><br><span class="line">        <span class="comment">//输出图像到页面</span></span><br><span class="line">        ImageIO.write(image,<span class="string">"JPEG"</span>,response.getOutputStream());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//产生随机颜色，min为rgb颜色最小值，max为rgb颜色最大值，不能超过255</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Color <span class="title">getRandomColor</span><span class="params">(<span class="keyword">int</span> min,<span class="keyword">int</span> max)</span></span>&#123;</span><br><span class="line">        Random random=<span class="keyword">new</span> Random();</span><br><span class="line">        <span class="keyword">if</span>(min&gt;<span class="number">255</span>)&#123;</span><br><span class="line">            min=<span class="number">255</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(max&gt;<span class="number">255</span>)&#123;</span><br><span class="line">            max=<span class="number">255</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> R=min+random.nextInt(max-min);</span><br><span class="line">        <span class="keyword">int</span> G=min+random.nextInt(max-min);</span><br><span class="line">        <span class="keyword">int</span> B=min+random.nextInt(max-min);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Color(R,G,B);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>然后创建并编写jsp页面</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div style=<span class="string">"text-align: center"</span>&gt;</span><br><span class="line">    &lt;form action=<span class="string">""</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;input id=<span class="string">"username"</span> type=<span class="string">"text"</span> autocomplete=<span class="string">"off"</span> placeholder=<span class="string">"邮箱"</span>&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;input id=<span class="string">"password"</span> type=<span class="string">"password"</span> autocomplete=<span class="string">"off"</span> placeholder=<span class="string">"登录密码"</span>&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;input type=<span class="string">"text"</span> style=<span class="string">"width: 85px"</span>&gt;&amp;nbsp;&amp;nbsp;&lt;img src=<span class="string">"yzm"</span>&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;button&gt;登 录&lt;/button&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;a href="javascript:"&gt;立即注册&lt;/a&gt;</span><br><span class="line">            &lt;a href="javascript:"&gt;忘记密码&lt;/a&gt;</span><br><span class="line">        &lt;/div&gt;&lt;/form&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>这里我们主要通过注解的方式配置访问路径，但是小伙伴也可以通过web.xml的方式，这里就不多说啦！</p>
+</li>
+<li><p>运行结果图</p>
+<p><img src="/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/C:%5CUsers%5C%E8%B5%B5%E8%B6%85%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200413165639992.png" alt="image-20200413165639992"></p>
+</li>
+</ol>
 
       
 
@@ -268,7 +285,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://mrzhaoc.github.io/2020/04/13/videod/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mrzhaoc.github.io/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -282,18 +299,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          简单实现验证码登录
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/04/11/%E8%AF%BB%E4%B9%A6%E6%8A%A5%E5%91%8A/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">读书报告</div>
+    <a href="/2020/04/13/videod/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">videod</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -324,8 +332,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "https://mrzhaoc.github.io/2020/04/13/videod/", 
-    sourceId: "videod",
+    url: "https://mrzhaoc.github.io/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/", 
+    sourceId: "简单实现验证码登录",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };

@@ -154,6 +154,94 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-简单实现验证码登录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/">简单实现验证码登录</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/" class="archive-article-date">
+  	<time datetime="2020-04-13T08:56:58.138Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简单实现验证码登录"><a href="#简单实现验证码登录" class="headerlink" title="简单实现验证码登录"></a>简单实现验证码登录</h2><ol>
+<li><p>开发环境</p>
+<ul>
+<li>idea创建maven-webapp项目</li>
+<li>导入相关依赖</li>
+</ul>
+</li>
+<li><p>这里我们主要通过servlet和jsp实现，虽然有一些落后，但是一步步来嘛</p>
+<ul>
+<li><p>首先创建一个servlet并编写相关代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">yzm</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        doGet(request,response);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置浏览器不缓存</span></span><br><span class="line">        response.setHeader(<span class="string">"pragma"</span>,<span class="string">"no-cache"</span>);</span><br><span class="line">        response.setHeader(<span class="string">"cache-control"</span>,<span class="string">"no-cache"</span>);</span><br><span class="line">        response.setHeader(<span class="string">"expires"</span>,<span class="string">"0"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义验证码边框的长和宽</span></span><br><span class="line">        <span class="keyword">int</span> width=<span class="number">85</span>;</span><br><span class="line">        <span class="keyword">int</span> height=<span class="number">40</span>;</span><br><span class="line">        <span class="comment">//创建一张图片对象</span></span><br><span class="line">        BufferedImage image=<span class="keyword">new</span> BufferedImage(width,height,BufferedImage.TYPE_INT_RGB);</span><br><span class="line">        <span class="comment">//得到图片的绘制环境</span></span><br><span class="line">        Graphics g=image.createGraphics();</span><br><span class="line">        <span class="comment">//设置图片背景颜色</span></span><br><span class="line">        g.setColor(getRandomColor(<span class="number">180</span>,<span class="number">250</span>));</span><br><span class="line">        <span class="comment">//绘制矩形区域</span></span><br><span class="line">        g.fillRect(<span class="number">0</span>,<span class="number">0</span>, width,height);</span><br><span class="line">        <span class="comment">//设置字体</span></span><br><span class="line">        g.setFont(<span class="keyword">new</span> Font(<span class="string">"宋体"</span>,Font.ITALIC,<span class="number">40</span>));<span class="comment">//1 字体 2 斜体 3 字体大小</span></span><br><span class="line">        <span class="comment">//随机产生一个四位数字</span></span><br><span class="line">        Random random=<span class="keyword">new</span> Random();</span><br><span class="line">        String sRand=<span class="string">""</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</span><br><span class="line">            String rand=String.valueOf(random.nextInt(<span class="number">10</span>));<span class="comment">//产生0-9随机数</span></span><br><span class="line">            sRand+=rand;</span><br><span class="line">            g.setColor(<span class="keyword">new</span> Color(<span class="number">20</span>+random.nextInt(<span class="number">80</span>),<span class="number">20</span>+random.nextInt(<span class="number">100</span>),<span class="number">20</span>+random.nextInt(<span class="number">90</span>)));</span><br><span class="line">            <span class="comment">//将随机书画在图片上</span></span><br><span class="line">            g.drawString(rand,<span class="number">10</span>+i*<span class="number">15</span>,<span class="number">34</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//干扰线</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;<span class="number">12</span>;k++)&#123;</span><br><span class="line">            <span class="keyword">int</span> x=random.nextInt(width-<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">int</span> y=random.nextInt(height-<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> x1=random.nextInt(width-<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">int</span> y1=random.nextInt(height-<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">            g.drawLine(x,y,x1,y1);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//将产生的验证码保存在session中，以便做验证时使用</span></span><br><span class="line">        request.getSession().setAttribute(<span class="string">"yzm"</span>,sRand);</span><br><span class="line">        <span class="comment">//是图像生效</span></span><br><span class="line">        g.dispose();</span><br><span class="line">        <span class="comment">//输出图像到页面</span></span><br><span class="line">        ImageIO.write(image,<span class="string">"JPEG"</span>,response.getOutputStream());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//产生随机颜色，min为rgb颜色最小值，max为rgb颜色最大值，不能超过255</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Color <span class="title">getRandomColor</span><span class="params">(<span class="keyword">int</span> min,<span class="keyword">int</span> max)</span></span>&#123;</span><br><span class="line">        Random random=<span class="keyword">new</span> Random();</span><br><span class="line">        <span class="keyword">if</span>(min&gt;<span class="number">255</span>)&#123;</span><br><span class="line">            min=<span class="number">255</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(max&gt;<span class="number">255</span>)&#123;</span><br><span class="line">            max=<span class="number">255</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> R=min+random.nextInt(max-min);</span><br><span class="line">        <span class="keyword">int</span> G=min+random.nextInt(max-min);</span><br><span class="line">        <span class="keyword">int</span> B=min+random.nextInt(max-min);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Color(R,G,B);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>然后创建并编写jsp页面</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div style=<span class="string">"text-align: center"</span>&gt;</span><br><span class="line">    &lt;form action=<span class="string">""</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;input id=<span class="string">"username"</span> type=<span class="string">"text"</span> autocomplete=<span class="string">"off"</span> placeholder=<span class="string">"邮箱"</span>&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;input id=<span class="string">"password"</span> type=<span class="string">"password"</span> autocomplete=<span class="string">"off"</span> placeholder=<span class="string">"登录密码"</span>&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;input type=<span class="string">"text"</span> style=<span class="string">"width: 85px"</span>&gt;&amp;nbsp;&amp;nbsp;&lt;img src=<span class="string">"yzm"</span>&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;button&gt;登 录&lt;/button&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;a href="javascript:"&gt;立即注册&lt;/a&gt;</span><br><span class="line">            &lt;a href="javascript:"&gt;忘记密码&lt;/a&gt;</span><br><span class="line">        &lt;/div&gt;&lt;/form&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>这里我们主要通过注解的方式配置访问路径，但是小伙伴也可以通过web.xml的方式，这里就不多说啦！</p>
+</li>
+<li><p>运行结果图</p>
+<p><img src="/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/C:%5CUsers%5C%E8%B5%B5%E8%B6%85%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200413165639992.png" alt="image-20200413165639992"></p>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-videod" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
