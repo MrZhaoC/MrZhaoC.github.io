@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://mrzhaoc.github.io">
-  <title>简单实现验证码登录 | Hexo</title>
+  <title>简单实现验证码登录/简单实现验证码登录 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="简单实现验证码登录 开发环境  idea创建maven-webapp项目 导入相关依赖   这里我们主要通过servlet和jsp实现，虽然有一些落后，但是一步步来嘛  首先创建一个servlet并编写相关代码 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简单实现验证码登录">
-<meta property="og:url" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;2020&#x2F;04&#x2F;13&#x2F;%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95&#x2F;index.html">
+<meta property="og:title" content="简单实现验证码登录&#x2F;简单实现验证码登录">
+<meta property="og:url" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;2020&#x2F;04&#x2F;13&#x2F;%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95&#x2F;%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="简单实现验证码登录 开发环境  idea创建maven-webapp项目 导入相关依赖   这里我们主要通过servlet和jsp实现，虽然有一些落后，但是一步步来嘛  首先创建一个servlet并编写相关代码 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;2020&#x2F;04&#x2F;13&#x2F;%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95&#x2F;C:%5CUsers%5C%E8%B5%B5%E8%B6%85%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200413165639992.png">
-<meta property="og:updated_time" content="2020-04-13T08:56:58.323Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;2020&#x2F;04&#x2F;13&#x2F;%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95&#x2F;%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95&#x2F;F:%5Cmyblog%5Csource_posts%5C%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95%5Cimage-20200413165639992.png">
+<meta property="og:updated_time" content="2020-04-13T09:07:59.807Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;2020&#x2F;04&#x2F;13&#x2F;%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95&#x2F;C:%5CUsers%5C%E8%B5%B5%E8%B6%85%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200413165639992.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;2020&#x2F;04&#x2F;13&#x2F;%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95&#x2F;%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95&#x2F;F:%5Cmyblog%5Csource_posts%5C%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95%5Cimage-20200413165639992.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -155,19 +155,19 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-简单实现验证码登录" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-简单实现验证码登录/简单实现验证码登录" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      简单实现验证码登录
+      简单实现验证码登录/简单实现验证码登录
     </h1>
   
 
         
-        <a href="/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/" class="archive-article-date">
+        <a href="/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/" class="archive-article-date">
   	<time datetime="2020-04-13T08:56:58.138Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
 </a>
         
@@ -198,7 +198,7 @@
 <li><p>这里我们主要通过注解的方式配置访问路径，但是小伙伴也可以通过web.xml的方式，这里就不多说啦！</p>
 </li>
 <li><p>运行结果图</p>
-<p><img src="/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/C:%5CUsers%5C%E8%B5%B5%E8%B6%85%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200413165639992.png" alt="image-20200413165639992"></p>
+<p><img src="/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/F:%5Cmyblog%5Csource_posts%5C%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95%5Cimage-20200413165639992.png" alt></p>
 </li>
 </ol>
 
@@ -285,7 +285,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://mrzhaoc.github.io/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mrzhaoc.github.io/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -332,8 +332,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "https://mrzhaoc.github.io/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/", 
-    sourceId: "简单实现验证码登录",
+    url: "https://mrzhaoc.github.io/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/", 
+    sourceId: "简单实现验证码登录/简单实现验证码登录",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
