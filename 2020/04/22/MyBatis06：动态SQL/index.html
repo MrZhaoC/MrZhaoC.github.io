@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://mrzhaoc.github.io">
-  <title>Archives | Hexo</title>
+  <title>MyBatis06：动态SQL | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hexo����">
+  <meta name="description" content="狂神说MyBatis06：动态SQL 基于MyBatis3.5.2版本   动态SQL  介绍  什么是动态SQL：动态SQL指的是根据不同的查询条件 , 生成不同的Sql语句. 1官网描述：MyBatis 的强大特性之一便是它的动态 SQL。如果你有使用 JDBC 或其它类似框架的经验，你就能体会到根据不同条件拼接 SQL 语句的痛苦。例如拼接时要确保不能忘记添加必要的空格，还要注意去掉列表最后">
 <meta name="keywords" content="hexo">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;archives&#x2F;index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBatis06：动态SQL">
+<meta property="og:url" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;2020&#x2F;04&#x2F;22&#x2F;MyBatis06%EF%BC%9A%E5%8A%A8%E6%80%81SQL&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="hexo����">
+<meta property="og:description" content="狂神说MyBatis06：动态SQL 基于MyBatis3.5.2版本   动态SQL  介绍  什么是动态SQL：动态SQL指的是根据不同的查询条件 , 生成不同的Sql语句. 1官网描述：MyBatis 的强大特性之一便是它的动态 SQL。如果你有使用 JDBC 或其它类似框架的经验，你就能体会到根据不同条件拼接 SQL 语句的痛苦。例如拼接时要确保不能忘记添加必要的空格，还要注意去掉列表最后">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_gif&#x2F;uJDAUKrGC7L1vFQMnaRIJSmeZ58T2eZicAHqMeOptckiacohSnX6DTIYSic2Uic7GLWuezVDk3bYqJa4vQwPwrLJXQ&#x2F;640?wx_fmt=gif&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_png&#x2F;uJDAUKrGC7JISvrLfLvE3e9Wv1kpFL9qzPPOq4EuoibKKLvGve4vEicLpXeEHfz1flqX3ribyzpbjDlOGzziapTsIw&#x2F;640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1">
+<meta property="og:updated_time" content="2020-04-22T01:47:38.730Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_gif&#x2F;uJDAUKrGC7L1vFQMnaRIJSmeZ58T2eZicAHqMeOptckiacohSnX6DTIYSic2Uic7GLWuezVDk3bYqJa4vQwPwrLJXQ&#x2F;640?wx_fmt=gif&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -152,295 +156,295 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-MyBatis06：动态SQL" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      MyBatis06：动态SQL
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis06%EF%BC%9A%E5%8A%A8%E6%80%81SQL/" class="archive-article-date">
+
+        
+        <a href="/2020/04/22/MyBatis06%EF%BC%9A%E5%8A%A8%E6%80%81SQL/" class="archive-article-date">
   	<time datetime="2020-04-22T01:49:44.743Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis06%EF%BC%9A%E5%8A%A8%E6%80%81SQL/">MyBatis06：动态SQL</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="狂神说MyBatis06：动态SQL"><a href="#狂神说MyBatis06：动态SQL" class="headerlink" title="狂神说MyBatis06：动态SQL"></a>狂神说MyBatis06：动态SQL</h2><blockquote>
+<p>基于MyBatis3.5.2版本</p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/uJDAUKrGC7L1vFQMnaRIJSmeZ58T2eZicAHqMeOptckiacohSnX6DTIYSic2Uic7GLWuezVDk3bYqJa4vQwPwrLJXQ/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" alt="img"></p>
+<p>动态SQL</p>
+<blockquote>
+<p>介绍</p>
+</blockquote>
+<p>什么是动态SQL：<strong>动态SQL指的是根据不同的查询条件 , 生成不同的Sql语句.</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">官网描述：MyBatis 的强大特性之一便是它的动态 SQL。如果你有使用 JDBC 或其它类似框架的经验，你就能体会到根据不同条件拼接 SQL 语句的痛苦。例如拼接时要确保不能忘记添加必要的空格，还要注意去掉列表最后一个列名的逗号。利用动态 SQL 这一特性可以彻底摆脱这种痛苦。虽然在以前使用动态 SQL 并非一件易事，但正是 MyBatis 提供了可以被用在任意 SQL 映射语句中的强大的动态 SQL 语言得以改进这种情形。动态 SQL 元素和 JSTL 或基于类似 XML 的文本处理器相似。在 MyBatis 之前的版本中，有很多元素需要花时间了解。MyBatis 3 大大精简了元素种类，现在只需学习原来一半的元素便可。MyBatis 采用功能强大的基于 OGNL 的表达式来淘汰其它大部分元素。  -------------------------------  - if  - choose (when, otherwise)  - trim (where, set)  - foreach  -------------------------------</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<p>我们之前写的 SQL 语句都比较简单，如果有比较复杂的业务，我们需要写复杂的 SQL 语句，往往需要拼接，而拼接 SQL ，稍微不注意，由于引号，空格等缺失可能都会导致错误。</p>
+<p>那么怎么去解决这个问题呢？这就要使用 mybatis 动态SQL，通过 if, choose, when, otherwise, trim, where, set, foreach等标签，可组合成非常灵活的SQL语句，从而在提高 SQL 语句的准确性的同时，也大大提高了开发人员的效率。</p>
+<blockquote>
+<p>搭建环境</p>
+</blockquote>
+<p><strong>新建一个数据库表：blog</strong></p>
+<p>字段：id，title，author，create_time，views</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `blog` (`id` varchar(50) NOT NULL COMMENT &apos;博客id&apos;,`title` varchar(100) NOT NULL COMMENT &apos;博客标题&apos;,`author` varchar(30) NOT NULL COMMENT &apos;博客作者&apos;,`create_time` datetime NOT NULL COMMENT &apos;创建时间&apos;,`views` int(30) NOT NULL COMMENT &apos;浏览量&apos;) ENGINE=InnoDB DEFAULT CHARSET=utf8</span><br></pre></td></tr></table></figure>
 
+<p>1、创建Mybatis基础工程</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7JISvrLfLvE3e9Wv1kpFL9qzPPOq4EuoibKKLvGve4vEicLpXeEHfz1flqX3ribyzpbjDlOGzziapTsIw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>2、IDutil工具类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class IDUtil &#123;   public static String genId()&#123;       return UUID.randomUUID().toString().replaceAll(&quot;-&quot;,&quot;&quot;);  &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3、实体类编写  【注意set方法作用】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Date;public class Blog &#123;   private String id;   private String title;   private String author;   private Date createTime;   private int views;   //set，get....&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4、编写Mapper接口及xml文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public interface BlogMapper &#123;&#125;</span><br><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;&lt;!DOCTYPE mapper       PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;       &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;&lt;mapper namespace=&quot;com.kuang.mapper.BlogMapper&quot;&gt;&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
+
+<p>5、mybatis核心配置文件，下划线驼峰自动转换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;settings&gt;   &lt;setting name=&quot;mapUnderscoreToCamelCase&quot; value=&quot;true&quot;/&gt;   &lt;setting name=&quot;logImpl&quot; value=&quot;STDOUT_LOGGING&quot;/&gt;&lt;/settings&gt;&lt;!--注册Mapper.xml--&gt;&lt;mappers&gt; &lt;mapper resource=&quot;mapper/BlogMapper.xml&quot;/&gt;&lt;/mappers&gt;</span><br></pre></td></tr></table></figure>
+
+<p>6、插入初始数据</p>
+<p>编写接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//新增一个博客int addBlog(Blog blog);</span><br></pre></td></tr></table></figure>
+
+<p>sql配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;insert id=&quot;addBlog&quot; parameterType=&quot;blog&quot;&gt;  insert into blog (id, title, author, create_time, views)  values (#&#123;id&#125;,#&#123;title&#125;,#&#123;author&#125;,#&#123;createTime&#125;,#&#123;views&#125;);&lt;/insert&gt;</span><br></pre></td></tr></table></figure>
+
+<p>初始化博客方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Testpublic void addInitBlog()&#123;   SqlSession session = MybatisUtils.getSession();   BlogMapper mapper = session.getMapper(BlogMapper.class);   Blog blog = new Blog();   blog.setId(IDUtil.genId());   blog.setTitle(&quot;Mybatis如此简单&quot;);   blog.setAuthor(&quot;狂神说&quot;);   blog.setCreateTime(new Date());   blog.setViews(9999);   mapper.addBlog(blog);   blog.setId(IDUtil.genId());   blog.setTitle(&quot;Java如此简单&quot;);   mapper.addBlog(blog);   blog.setId(IDUtil.genId());   blog.setTitle(&quot;Spring如此简单&quot;);   mapper.addBlog(blog);   blog.setId(IDUtil.genId());   blog.setTitle(&quot;微服务如此简单&quot;);   mapper.addBlog(blog);   session.close();&#125;</span><br></pre></td></tr></table></figure>
+
+<p>初始化数据完毕！</p>
+<blockquote>
+<p>if 语句</p>
+</blockquote>
+<p><strong>需求：根据作者名字和博客名字来查询博客！如果作者名字为空，那么只根据博客名字查询，反之，则根据作者名来查询</strong></p>
+<p>1、编写接口类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//需求1List&lt;Blog&gt; queryBlogIf(Map map);</span><br></pre></td></tr></table></figure>
+
+<p>2、编写SQL语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--需求1：根据作者名字和博客名字来查询博客！如果作者名字为空，那么只根据博客名字查询，反之，则根据作者名来查询select * from blog where title = #&#123;title&#125; and author = #&#123;author&#125;--&gt;&lt;select id=&quot;queryBlogIf&quot; parameterType=&quot;map&quot; resultType=&quot;blog&quot;&gt;  select * from blog where   &lt;if test=&quot;title != null&quot;&gt;      title = #&#123;title&#125;   &lt;/if&gt;   &lt;if test=&quot;author != null&quot;&gt;      and author = #&#123;author&#125;   &lt;/if&gt;&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+<p>3、测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Testpublic void testQueryBlogIf()&#123;   SqlSession session = MybatisUtils.getSession();   BlogMapper mapper = session.getMapper(BlogMapper.class);   HashMap&lt;String, String&gt; map = new HashMap&lt;String, String&gt;();   map.put(&quot;title&quot;,&quot;Mybatis如此简单&quot;);   map.put(&quot;author&quot;,&quot;狂神说&quot;);   List&lt;Blog&gt; blogs = mapper.queryBlogIf(map);   System.out.println(blogs);   session.close();&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样写我们可以看到，如果 author 等于 null，那么查询语句为 select * from user where title=#{title},但是如果title为空呢？那么查询语句为 select * from user where and author=#{author}，这是错误的 SQL 语句，如何解决呢？请看下面的 where 语句！</p>
+<blockquote>
+<p>Where</p>
+</blockquote>
+<p>修改上面的SQL语句；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;queryBlogIf&quot; parameterType=&quot;map&quot; resultType=&quot;blog&quot;&gt;  select * from blog   &lt;where&gt;       &lt;if test=&quot;title != null&quot;&gt;          title = #&#123;title&#125;       &lt;/if&gt;       &lt;if test=&quot;author != null&quot;&gt;          and author = #&#123;author&#125;       &lt;/if&gt;   &lt;/where&gt;&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这个“where”标签会知道如果它包含的标签中有返回值的话，它就插入一个‘where’。此外，如果标签返回的内容是以AND 或OR 开头的，则它会剔除掉。</p>
+<blockquote>
+<p>Set</p>
+</blockquote>
+<p>同理，上面的对于查询 SQL 语句包含 where 关键字，如果在进行更新操作的时候，含有 set 关键词，我们怎么处理呢？</p>
+<p>1、编写接口方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int updateBlog(Map map);</span><br></pre></td></tr></table></figure>
+
+<p>2、sql配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--注意set是用的逗号隔开--&gt;&lt;update id=&quot;updateBlog&quot; parameterType=&quot;map&quot;&gt;  update blog     &lt;set&gt;         &lt;if test=&quot;title != null&quot;&gt;            title = #&#123;title&#125;,         &lt;/if&gt;         &lt;if test=&quot;author != null&quot;&gt;            author = #&#123;author&#125;         &lt;/if&gt;     &lt;/set&gt;  where id = #&#123;id&#125;;&lt;/update&gt;</span><br></pre></td></tr></table></figure>
+
+<p>3、测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Testpublic void testUpdateBlog()&#123;   SqlSession session = MybatisUtils.getSession();   BlogMapper mapper = session.getMapper(BlogMapper.class);   HashMap&lt;String, String&gt; map = new HashMap&lt;String, String&gt;();   map.put(&quot;title&quot;,&quot;动态SQL&quot;);   map.put(&quot;author&quot;,&quot;秦疆&quot;);   map.put(&quot;id&quot;,&quot;9d6a763f5e1347cebda43e2a32687a77&quot;);   mapper.updateBlog(map);   session.close();&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>choose语句</p>
+</blockquote>
+<p>有时候，我们不想用到所有的查询条件，只想选择其中的一个，查询条件有一个满足即可，使用 choose 标签可以解决此类问题，类似于 Java 的 switch 语句</p>
+<p>1、编写接口方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Blog&gt; queryBlogChoose(Map map);</span><br></pre></td></tr></table></figure>
+
+<p>2、sql配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;queryBlogChoose&quot; parameterType=&quot;map&quot; resultType=&quot;blog&quot;&gt;  select * from blog   &lt;where&gt;       &lt;choose&gt;           &lt;when test=&quot;title != null&quot;&gt;                title = #&#123;title&#125;           &lt;/when&gt;           &lt;when test=&quot;author != null&quot;&gt;              and author = #&#123;author&#125;           &lt;/when&gt;           &lt;otherwise&gt;              and views = #&#123;views&#125;           &lt;/otherwise&gt;       &lt;/choose&gt;   &lt;/where&gt;&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+<p>3、测试类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Testpublic void testQueryBlogChoose()&#123;   SqlSession session = MybatisUtils.getSession();   BlogMapper mapper = session.getMapper(BlogMapper.class);   HashMap&lt;String, Object&gt; map = new HashMap&lt;String, Object&gt;();   map.put(&quot;title&quot;,&quot;Java如此简单&quot;);   map.put(&quot;author&quot;,&quot;狂神说&quot;);   map.put(&quot;views&quot;,9999);   List&lt;Blog&gt; blogs = mapper.queryBlogChoose(map);   System.out.println(blogs);   session.close();&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>SQL片段</p>
+</blockquote>
+<p>有时候可能某个 sql 语句我们用的特别多，为了增加代码的重用性，简化代码，我们需要将这些代码抽取出来，然后使用时直接调用。</p>
+<p><strong>提取SQL片段：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;sql id=&quot;if-title-author&quot;&gt;   &lt;if test=&quot;title != null&quot;&gt;      title = #&#123;title&#125;   &lt;/if&gt;   &lt;if test=&quot;author != null&quot;&gt;      and author = #&#123;author&#125;   &lt;/if&gt;&lt;/sql&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>引用SQL片段：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;queryBlogIf&quot; parameterType=&quot;map&quot; resultType=&quot;blog&quot;&gt;  select * from blog   &lt;where&gt;       &lt;!-- 引用 sql 片段，如果refid 指定的不在本文件中，那么需要在前面加上 namespace --&gt;       &lt;include refid=&quot;if-title-author&quot;&gt;&lt;/include&gt;       &lt;!-- 在这里还可以引用其他的 sql 片段 --&gt;   &lt;/where&gt;&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<p>①、最好基于 单表来定义 sql 片段，提高片段的可重用性</p>
+<p>②、在 sql 片段中不要包括 where</p>
+<blockquote>
+<p>Foreach</p>
+</blockquote>
+<p>将数据库中前三个数据的id修改为1,2,3；</p>
+<p>需求：我们需要查询 blog 表中 id 分别为1,2,3的博客信息</p>
+<p>1、编写接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Blog&gt; queryBlogForeach(Map map);</span><br></pre></td></tr></table></figure>
+
+<p>2、编写SQL语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;queryBlogForeach&quot; parameterType=&quot;map&quot; resultType=&quot;blog&quot;&gt;  select * from blog   &lt;where&gt;       &lt;!--       collection:指定输入对象中的集合属性       item:每次遍历生成的对象       open:开始遍历时的拼接字符串       close:结束时拼接的字符串       separator:遍历对象之间需要拼接的字符串       select * from blog where 1=1 and (id=1 or id=2 or id=3)     --&gt;       &lt;foreach collection=&quot;ids&quot;  item=&quot;id&quot; open=&quot;and (&quot; close=&quot;)&quot; separator=&quot;or&quot;&gt;          id=#&#123;id&#125;       &lt;/foreach&gt;   &lt;/where&gt;&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+<p>3、测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Testpublic void testQueryBlogForeach()&#123;   SqlSession session = MybatisUtils.getSession();   BlogMapper mapper = session.getMapper(BlogMapper.class);   HashMap map = new HashMap();   List&lt;Integer&gt; ids = new ArrayList&lt;Integer&gt;();   ids.add(1);   ids.add(2);   ids.add(3);   map.put(&quot;ids&quot;,ids);   List&lt;Blog&gt; blogs = mapper.queryBlogForeach(map);   System.out.println(blogs);   session.close();&#125;</span><br></pre></td></tr></table></figure>
+
+<p>小结：其实动态 sql 语句的编写往往就是一个拼接的问题，为了保证拼接准确，我们最好首先要写原生的 sql 语句出来，然后在通过 mybatis 动态sql 对照着改，防止出错。多在实践中使用才是熟练掌握它的技巧。</p>
+<p>动态SQL在开发中大量的使用，一定要熟练掌握！</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/WeChat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mrzhaoc.github.io/2020/04/22/MyBatis06%EF%BC%9A%E5%8A%A8%E6%80%81SQL/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis05%EF%BC%9A%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%92%8C%E5%A4%9A%E5%AF%B9%E4%B8%80%E5%A4%84%E7%90%86/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.742Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/22/MyBatis05%EF%BC%9A%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%92%8C%E5%A4%9A%E5%AF%B9%E4%B8%80%E5%A4%84%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MyBatis05：一对多和多对一处理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis05%EF%BC%9A%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%92%8C%E5%A4%9A%E5%AF%B9%E4%B8%80%E5%A4%84%E7%90%86/">MyBatis05：一对多和多对一处理</a>
-    </h1>
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "https://mrzhaoc.github.io/2020/04/22/MyBatis06%EF%BC%9A%E5%8A%A8%E6%80%81SQL/", 
+    sourceId: "MyBatis06：动态SQL",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis04%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.740Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis04%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/">MyBatis04：使用注解开发</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis03%EF%BC%9AResultMap%E5%8F%8A%E5%88%86%E9%A1%B5/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.738Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis03%EF%BC%9AResultMap%E5%8F%8A%E5%88%86%E9%A1%B5/">MyBatis03：ResultMap及分页</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis02%EF%BC%9ACRUD%E6%93%8D%E4%BD%9C%E5%8F%8A%E9%85%8D%E7%BD%AE%E8%A7%A3%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.719Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis02%EF%BC%9ACRUD%E6%93%8D%E4%BD%9C%E5%8F%8A%E9%85%8D%E7%BD%AE%E8%A7%A3%E6%9E%90/">MyBatis02：CRUD操作及配置解析</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis01%EF%BC%9A%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.717Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis01%EF%BC%9A%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/">MyBatis01：第一个程序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis07%EF%BC%9A%E7%BC%93%E5%AD%98/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.715Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis07%EF%BC%9A%E7%BC%93%E5%AD%98/">MyBatis07：缓存</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2020-04-13T08:56:58.138Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/">简单实现验证码登录/简单实现验证码登录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/11/%E8%AF%BB%E4%B9%A6%E6%8A%A5%E5%91%8A/" class="archive-article-date">
-  	<time datetime="2020-04-11T14:39:15.533Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/11/%E8%AF%BB%E4%B9%A6%E6%8A%A5%E5%91%8A/">读书报告</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/08/Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" class="archive-article-date">
-  	<time datetime="2020-04-08T06:34:00.045Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/08/Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/">Lombok快速学习手册</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -464,8 +468,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

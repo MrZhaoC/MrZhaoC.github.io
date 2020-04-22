@@ -6,13 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://mrzhaoc.github.io">
-  <title>Archives | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="hexo����">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;archives&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;page&#x2F;2&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="hexo����">
 <meta property="og:locale" content="en">
@@ -154,292 +154,241 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-spring-IOC学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/23/spring-IOC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">spring-IOC学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/23/spring-IOC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2019-11-23T13:12:42.060Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-23</time>
+</a>
+        
+      </header>
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="10084-Spring自动装配注解方式"><a href="#10084-Spring自动装配注解方式" class="headerlink" title="&#10084;Spring自动装配注解方式"></a>&#10084;Spring自动装配注解方式</h2><h4 id="在配置文件中beans-xml中添加context约束"><a href="#在配置文件中beans-xml中添加context约束" class="headerlink" title="在配置文件中beans.xml中添加context约束"></a>在配置文件中beans.xml中添加context约束</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xmlns:context="http://www.springframework.org/schema/context"</span><br><span class="line">http://www.springframework.org/schema/context</span><br><span class="line">https://www.springframework.org/schema/context/spring-context.xsd</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:annotation-config</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="10084-自动装配常用注解"><a href="#10084-自动装配常用注解" class="headerlink" title="&#10084;自动装配常用注解"></a>&#10084;自动装配常用注解</h2><p>@Autowired  和@resource</p>
+<ul>
+<li>Autowired默认先按<font color="red">byType</font>，如果发现找到多个bean，则，又按照<font color="pink">byName</font>方式比对，如果还有多个，则报出异常。</li>
+<li>默认按 <font color="green">byName</font>自动注入,如果找不到再按<font color="blue">byType</font>找bean,如果还是找不到则抛异常，无论按byName还是byType如果找到多个，则抛异常。  </li>
+</ul>
+<h2 id="10084-spring常用依赖"><a href="#10084-spring常用依赖" class="headerlink" title="&#10084;spring常用依赖"></a>&#10084;spring常用依赖</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--spring-core配置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.0.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--spring-context配置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.0.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--junit测试配置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.11<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="spring-IOC容器"><a href="#spring-IOC容器" class="headerlink" title="spring IOC容器"></a>spring IOC容器</h2><p> 依赖注入（DI）和控制反转（IOC）是从不同的角度的描述的同一件事情，指就是<strong>通过引入IOC容器，利用依赖关系注入的方式，实现对象之间的解耦</strong>。 </p>
+<p> <img src="https://img-blog.csdn.net/20180406194740168?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xvdmVfZXZlcnlib2R5/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"> </p>
+<p> <img src="https://img-blog.csdn.net/20180406194850470?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xvdmVfZXZlcnlib2R5/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"> </p>
+<p> <img src="https://img-blog.csdn.net/20180406194918287?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xvdmVfZXZlcnlib2R5/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"> </p>
+<h3 id="插入连接方式-一对-lt-gt"><a href="#插入连接方式-一对-lt-gt" class="headerlink" title="插入连接方式 一对&lt;&gt;"></a>插入连接方式 一对&lt;&gt;</h3><p>&lt;&lt;<a href="http://www.baidu.com&gt;&gt;" target="_blank" rel="noopener">www.baidu.com&gt;&gt;</a></p>
+<ul>
+<li>列表文字</li>
+<li>Markdown使用列表</li>
+</ul>
+<h3 id="表格使用方式"><a href="#表格使用方式" class="headerlink" title="表格使用方式"></a>表格使用方式</h3><table><tr><td bgcolor="orange">赵超|20岁|热爱自然</td></tr></table>
+
+
+
+
+
+<h2 id="amp-9730spring注解方式"><a href="#amp-9730spring注解方式" class="headerlink" title="&amp;#9730spring注解方式"></a>&amp;#9730spring注解方式</h2><h4 id="9730-配置文件中添加"><a href="#9730-配置文件中添加" class="headerlink" title="&#9730;配置文件中添加"></a>&#9730;配置文件中添加</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:annotation-config</span>/&gt;</span></span><br><span class="line"><span class="comment">&lt;!--指定要扫描的包，在该包下的注解会生效--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"com.zc"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="9730-spring在实体类是使用"><a href="#9730-spring在实体类是使用" class="headerlink" title="&#9730;spring在实体类是使用"></a>&#9730;spring在实体类是使用</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//等价于<span class="tag">&lt;<span class="name">bean</span>&gt;</span></span><br><span class="line">@Component</span><br><span class="line">@Scope("singleton")</span><br><span class="line">public class User &#123;</span><br><span class="line"></span><br><span class="line">    private String name;</span><br><span class="line"></span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line">    //等价于<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    @Value("你好")</span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/23/spring-IOC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="archives">
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Markdown使用方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis06%EF%BC%9A%E5%8A%A8%E6%80%81SQL/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.743Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis06%EF%BC%9A%E5%8A%A8%E6%80%81SQL/">MyBatis06：动态SQL</a>
+      <a class="article-title" href="/2019/10/17/Markdown%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">Markdown使用方法</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2019/10/17/Markdown%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2019-10-17T14:14:36.283Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="以此纪念我的第一篇博客"><a href="#以此纪念我的第一篇博客" class="headerlink" title="以此纪念我的第一篇博客"></a>以此纪念我的第一篇博客</h1><h1 id="Markdown基本使用语法"><a href="#Markdown基本使用语法" class="headerlink" title="Markdown基本使用语法"></a>Markdown基本使用<strong>语法</strong></h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h3 id="在Markdown中一共有6种标题形式，h1-h6，标题从上至下以此增大，下面举两个例子："><a href="#在Markdown中一共有6种标题形式，h1-h6，标题从上至下以此增大，下面举两个例子：" class="headerlink" title="在Markdown中一共有6种标题形式，h1~h6，标题从上至下以此增大，下面举两个例子："></a>在Markdown中一共有6种标题形式，h1~h6，标题从上至下以此增大，下面举两个例子：</h3><h1 id="标题一"><a href="#标题一" class="headerlink" title="标题一"></a>标题一</h1><h2 id="标题二"><a href="#标题二" class="headerlink" title="标题二"></a>标题二</h2><h3 id="除此之外，Markdown还支持另一种标题形式，共有两种形式：下面举例："><a href="#除此之外，Markdown还支持另一种标题形式，共有两种形式：下面举例：" class="headerlink" title="除此之外，Markdown还支持另一种标题形式，共有两种形式：下面举例："></a>除此之外，Markdown还支持另一种标题形式，共有两种形式：下面举例：</h3><h2 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h2><hr>
+<h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h2 id="高亮强调-举例："><a href="#高亮强调-举例：" class="headerlink" title="高亮强调 举例："></a>高亮强调 举例：</h2><blockquote>
+<p>用于段首进行强调，高亮显示</p>
+</blockquote>
+<h2 id="插入图片或链接"><a href="#插入图片或链接" class="headerlink" title="插入图片或链接"></a>插入图片或链接</h2><h3 id="链接格式为-描述"><a href="#链接格式为-描述" class="headerlink" title="链接格式为:描述"></a>链接格式为:<a href="url地址">描述</a></h3><h3 id="图片格式为"><a href="#图片格式为" class="headerlink" title="图片格式为:"></a>图片格式为:<img src="/2019/10/17/Markdown%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/%E5%9B%BE%E7%89%87%E5%85%B7%E4%BD%93%E5%9C%B0%E5%9D%80" alt="描述"></h3><p><a href="http://baidu.com" target="_blank" rel="noopener">百度</a><br><img src="https://wallhaven.cc/w/j5dzep" alt="图片"></p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="无序列表：-，-，"><a href="#无序列表：-，-，" class="headerlink" title="无序列表：*，+，-"></a>无序列表：*，+，-</h3><h3 id="有序列表：1"><a href="#有序列表：1" class="headerlink" title="有序列表：1."></a>有序列表：1.</h3><h3 id="需要注意-有序列表数字从第一个有效，下面无论写对写错都没关系-例子："><a href="#需要注意-有序列表数字从第一个有效，下面无论写对写错都没关系-例子：" class="headerlink" title="需要注意:有序列表数字从第一个有效，下面无论写对写错都没关系 例子："></a>需要注意:有序列表数字从第一个有效，下面无论写对写错都没关系 例子：</h3><p>*黄瓜<br>*土豆<br>+西瓜<br>-香蕉</p>
+<p>1.铅笔<br>3.钢笔</p>
+<h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><h3 id="强调包括斜体和粗体："><a href="#强调包括斜体和粗体：" class="headerlink" title="强调包括斜体和粗体："></a>强调包括斜体和粗体：</h3><p><em>这是斜体</em><br><strong>这是粗体</strong></p>
+<h2 id="代码引入"><a href="#代码引入" class="headerlink" title="代码引入"></a>代码引入</h2><p>###在反引号之间插入即可，反引号为esc下面第一个键，举例：<br><code>var  div int a;</code><br><code>for(int i;i&lt;10;i++)</code></p>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/17/Markdown%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis05%EF%BC%9A%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%92%8C%E5%A4%9A%E5%AF%B9%E4%B8%80%E5%A4%84%E7%90%86/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.742Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis05%EF%BC%9A%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%92%8C%E5%A4%9A%E5%AF%B9%E4%B8%80%E5%A4%84%E7%90%86/">MyBatis05：一对多和多对一处理</a>
+      <a class="article-title" href="/2019/10/17/hello-world/">Hello World</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis04%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.740Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
+        
+        <a href="/2019/10/17/hello-world/" class="archive-article-date">
+  	<time datetime="2019-10-17T10:08:42.968Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis04%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/">MyBatis04：使用注解开发</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/17/hello-world/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis03%EF%BC%9AResultMap%E5%8F%8A%E5%88%86%E9%A1%B5/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.738Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis03%EF%BC%9AResultMap%E5%8F%8A%E5%88%86%E9%A1%B5/">MyBatis03：ResultMap及分页</a>
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis02%EF%BC%9ACRUD%E6%93%8D%E4%BD%9C%E5%8F%8A%E9%85%8D%E7%BD%AE%E8%A7%A3%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.719Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis02%EF%BC%9ACRUD%E6%93%8D%E4%BD%9C%E5%8F%8A%E9%85%8D%E7%BD%AE%E8%A7%A3%E6%9E%90/">MyBatis02：CRUD操作及配置解析</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis01%EF%BC%9A%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.717Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis01%EF%BC%9A%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/">MyBatis01：第一个程序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis07%EF%BC%9A%E7%BC%93%E5%AD%98/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.715Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis07%EF%BC%9A%E7%BC%93%E5%AD%98/">MyBatis07：缓存</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2020-04-13T08:56:58.138Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/">简单实现验证码登录/简单实现验证码登录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/11/%E8%AF%BB%E4%B9%A6%E6%8A%A5%E5%91%8A/" class="archive-article-date">
-  	<time datetime="2020-04-11T14:39:15.533Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/11/%E8%AF%BB%E4%B9%A6%E6%8A%A5%E5%91%8A/">读书报告</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/08/Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" class="archive-article-date">
-  	<time datetime="2020-04-08T06:34:00.045Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/08/Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/">Lombok快速学习手册</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
-  
-
-    
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
     </nav>
   
 
@@ -463,9 +412,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
+		isHome: true,
 		isPost: false,
-		isArchive: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

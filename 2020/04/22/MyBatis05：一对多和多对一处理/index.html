@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://mrzhaoc.github.io">
-  <title>Archives | Hexo</title>
+  <title>MyBatis05：一对多和多对一处理 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hexo����">
+  <meta name="description" content="狂神说MyBatis05：一对多和多对一处理 基于MyBatis3.5.2版本   多对一处理 多对一的处理多对一的理解：  多个学生对应一个老师 如果对于学生这边，就是一个多对一的现象，即从学生这边关联一个老师！   数据库设计   1CREATE TABLE `teacher` (`id` INT(10) NOT NULL,`name` VARCHAR(30) DEFAULT NULL,PRI">
 <meta name="keywords" content="hexo">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;archives&#x2F;index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBatis05：一对多和多对一处理">
+<meta property="og:url" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;2020&#x2F;04&#x2F;22&#x2F;MyBatis05%EF%BC%9A%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%92%8C%E5%A4%9A%E5%AF%B9%E4%B8%80%E5%A4%84%E7%90%86&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="hexo����">
+<meta property="og:description" content="狂神说MyBatis05：一对多和多对一处理 基于MyBatis3.5.2版本   多对一处理 多对一的处理多对一的理解：  多个学生对应一个老师 如果对于学生这边，就是一个多对一的现象，即从学生这边关联一个老师！   数据库设计   1CREATE TABLE `teacher` (`id` INT(10) NOT NULL,`name` VARCHAR(30) DEFAULT NULL,PRI">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_gif&#x2F;uJDAUKrGC7L1vFQMnaRIJSmeZ58T2eZicAHqMeOptckiacohSnX6DTIYSic2Uic7GLWuezVDk3bYqJa4vQwPwrLJXQ&#x2F;640?wx_fmt=gif&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_png&#x2F;uJDAUKrGC7LPbib5To6slfFhMArq5QvCjofjccx37cuQgKsWEHibax0bDiaicU6ojNfEzWrj3TibFsX3MJju4sAp5Pg&#x2F;640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1">
+<meta property="og:updated_time" content="2020-04-22T01:46:54.168Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_gif&#x2F;uJDAUKrGC7L1vFQMnaRIJSmeZ58T2eZicAHqMeOptckiacohSnX6DTIYSic2Uic7GLWuezVDk3bYqJa4vQwPwrLJXQ&#x2F;640?wx_fmt=gif&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -152,295 +156,317 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-MyBatis05：一对多和多对一处理" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis06%EF%BC%9A%E5%8A%A8%E6%80%81SQL/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.743Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis06%EF%BC%9A%E5%8A%A8%E6%80%81SQL/">MyBatis06：动态SQL</a>
+    <h1 class="article-title" itemprop="name">
+      MyBatis05：一对多和多对一处理
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis05%EF%BC%9A%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%92%8C%E5%A4%9A%E5%AF%B9%E4%B8%80%E5%A4%84%E7%90%86/" class="archive-article-date">
+        
+        <a href="/2020/04/22/MyBatis05%EF%BC%9A%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%92%8C%E5%A4%9A%E5%AF%B9%E4%B8%80%E5%A4%84%E7%90%86/" class="archive-article-date">
   	<time datetime="2020-04-22T01:49:44.742Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis05%EF%BC%9A%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%92%8C%E5%A4%9A%E5%AF%B9%E4%B8%80%E5%A4%84%E7%90%86/">MyBatis05：一对多和多对一处理</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="狂神说MyBatis05：一对多和多对一处理"><a href="#狂神说MyBatis05：一对多和多对一处理" class="headerlink" title="狂神说MyBatis05：一对多和多对一处理"></a>狂神说MyBatis05：一对多和多对一处理</h2><blockquote>
+<p>基于MyBatis3.5.2版本</p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/uJDAUKrGC7L1vFQMnaRIJSmeZ58T2eZicAHqMeOptckiacohSnX6DTIYSic2Uic7GLWuezVDk3bYqJa4vQwPwrLJXQ/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" alt="img"></p>
+<p>多对一处理</p>
+<h2 id="多对一的处理"><a href="#多对一的处理" class="headerlink" title="多对一的处理"></a>多对一的处理</h2><p>多对一的理解：</p>
+<ul>
+<li>多个学生对应一个老师</li>
+<li>如果对于学生这边，就是一个多对一的现象，即从学生这边关联一个老师！</li>
+</ul>
+<blockquote>
+<p>数据库设计</p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7LPbib5To6slfFhMArq5QvCjofjccx37cuQgKsWEHibax0bDiaicU6ojNfEzWrj3TibFsX3MJju4sAp5Pg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `teacher` (`id` INT(10) NOT NULL,`name` VARCHAR(30) DEFAULT NULL,PRIMARY KEY (`id`)) ENGINE=INNODB DEFAULT CHARSET=utf8INSERT INTO teacher(`id`, `name`) VALUES (1, &apos;秦老师&apos;);CREATE TABLE `student` (`id` INT(10) NOT NULL,`name` VARCHAR(30) DEFAULT NULL,`tid` INT(10) DEFAULT NULL,PRIMARY KEY (`id`),KEY `fktid` (`tid`),CONSTRAINT `fktid` FOREIGN KEY (`tid`) REFERENCES `teacher` (`id`)) ENGINE=INNODB DEFAULT CHARSET=utf8INSERT INTO `student` (`id`, `name`, `tid`) VALUES (&apos;1&apos;, &apos;小明&apos;, &apos;1&apos;);INSERT INTO `student` (`id`, `name`, `tid`) VALUES (&apos;2&apos;, &apos;小红&apos;, &apos;1&apos;);INSERT INTO `student` (`id`, `name`, `tid`) VALUES (&apos;3&apos;, &apos;小张&apos;, &apos;1&apos;);INSERT INTO `student` (`id`, `name`, `tid`) VALUES (&apos;4&apos;, &apos;小李&apos;, &apos;1&apos;);INSERT INTO `student` (`id`, `name`, `tid`) VALUES (&apos;5&apos;, &apos;小王&apos;, &apos;1&apos;);</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<blockquote>
+<p>搭建测试环境</p>
+</blockquote>
+<p>1、IDEA安装Lombok插件</p>
+<p>2、引入Maven依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- https://mvnrepository.com/artifact/org.projectlombok/lombok --&gt;&lt;dependency&gt; &lt;groupId&gt;org.projectlombok&lt;/groupId&gt; &lt;artifactId&gt;lombok&lt;/artifactId&gt; &lt;version&gt;1.16.10&lt;/version&gt;&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 
+<p>3、在代码中增加注解</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Data //GET,SET,ToString，有参，无参构造public class Teacher &#123;   private int id;   private String name;&#125;</span><br><span class="line">@Datapublic class Student &#123;   private int id;   private String name;   //多个学生可以是同一个老师，即多对一   private Teacher teacher;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4、编写实体类对应的Mapper接口 【两个】</p>
+<ul>
+<li><strong>无论有没有需求，都应该写上，以备后来之需！</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public interface StudentMapper &#123;&#125;</span><br><span class="line">public interface TeacherMapper &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>5、编写Mapper接口对应的 mapper.xml配置文件 【两个】</p>
+<ul>
+<li><strong>无论有没有需求，都应该写上，以备后来之需！</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;&lt;!DOCTYPE mapper       PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;       &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;&lt;mapper namespace=&quot;com.kuang.mapper.StudentMapper&quot;&gt;&lt;/mapper&gt;</span><br><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;&lt;!DOCTYPE mapper       PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;       &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;&lt;mapper namespace=&quot;com.kuang.mapper.TeacherMapper&quot;&gt;&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>按查询嵌套处理</p>
+</blockquote>
+<p>1、给StudentMapper接口增加方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//获取所有学生及对应老师的信息public List&lt;Student&gt; getStudents();</span><br></pre></td></tr></table></figure>
+
+<p>2、编写对应的Mapper文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;&lt;!DOCTYPE mapper       PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;       &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;&lt;mapper namespace=&quot;com.kuang.mapper.StudentMapper&quot;&gt;   &lt;!--   需求：获取所有学生及对应老师的信息   思路：       1. 获取所有学生的信息       2. 根据获取的学生信息的老师ID-&gt;获取该老师的信息       3. 思考问题，这样学生的结果集中应该包含老师，该如何处理呢，数据库中我们一般使用关联查询？           1. 做一个结果集映射：StudentTeacher           2. StudentTeacher结果集的类型为 Student           3. 学生中老师的属性为teacher，对应数据库中为tid。              多个 [1,...）学生关联一个老师=&gt; 一对一，一对多           4. 查看官网找到：association – 一个复杂类型的关联；使用它来处理关联查询   --&gt;   &lt;select id=&quot;getStudents&quot; resultMap=&quot;StudentTeacher&quot;&gt;    select * from student   &lt;/select&gt;   &lt;resultMap id=&quot;StudentTeacher&quot; type=&quot;Student&quot;&gt;       &lt;!--association关联属性 property属性名 javaType属性类型 column在多的一方的表中的列名--&gt;       &lt;association property=&quot;teacher&quot;  column=&quot;tid&quot; javaType=&quot;Teacher&quot;select=&quot;getTeacher&quot;/&gt;   &lt;/resultMap&gt;   &lt;!--   这里传递过来的id，只有一个属性的时候，下面可以写任何值   association中column多参数配置：       column=&quot;&#123;key=value,key=value&#125;&quot;       其实就是键值对的形式，key是传给下个sql的取值名称，value是片段一中sql查询的字段名。   --&gt;   &lt;select id=&quot;getTeacher&quot; resultType=&quot;teacher&quot;&gt;      select * from teacher where id = #&#123;id&#125;   &lt;/select&gt;&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
+
+<p>3、编写完毕去Mybatis配置文件中，注册Mapper！</p>
+<p>4、注意点说明：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap id=&quot;StudentTeacher&quot; type=&quot;Student&quot;&gt;   &lt;!--association关联属性 property属性名 javaType属性类型 column在多的一方的表中的列名--&gt;   &lt;association property=&quot;teacher&quot;  column=&quot;&#123;id=tid,name=tid&#125;&quot;javaType=&quot;Teacher&quot; select=&quot;getTeacher&quot;/&gt;&lt;/resultMap&gt;&lt;!--这里传递过来的id，只有一个属性的时候，下面可以写任何值association中column多参数配置：   column=&quot;&#123;key=value,key=value&#125;&quot;   其实就是键值对的形式，key是传给下个sql的取值名称，value是片段一中sql查询的字段名。--&gt;&lt;select id=&quot;getTeacher&quot; resultType=&quot;teacher&quot;&gt;  select * from teacher where id = #&#123;id&#125; and name = #&#123;name&#125;&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+<p>5、测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Testpublic void testGetStudents()&#123;   SqlSession session = MybatisUtils.getSession();   StudentMapper mapper = session.getMapper(StudentMapper.class);   List&lt;Student&gt; students = mapper.getStudents();   for (Student student : students)&#123;       System.out.println(               &quot;学生名:&quot;+ student.getName()                       +&quot;\t老师:&quot;+student.getTeacher().getName());  &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>按结果嵌套处理</p>
+</blockquote>
+<p>除了上面这种方式，还有其他思路吗？</p>
+<p>我们还可以按照结果进行嵌套处理；</p>
+<p>1、接口方法编写</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;Student&gt; getStudents2();</span><br></pre></td></tr></table></figure>
+
+<p>2、编写对应的mapper文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--按查询结果嵌套处理思路：   1. 直接查询出结果，进行结果集的映射--&gt;&lt;select id=&quot;getStudents2&quot; resultMap=&quot;StudentTeacher2&quot; &gt;  select s.id sid, s.name sname , t.name tname  from student s,teacher t  where s.tid = t.id&lt;/select&gt;&lt;resultMap id=&quot;StudentTeacher2&quot; type=&quot;Student&quot;&gt;   &lt;id property=&quot;id&quot; column=&quot;sid&quot;/&gt;   &lt;result property=&quot;name&quot; column=&quot;sname&quot;/&gt;   &lt;!--关联对象property 关联对象在Student实体类中的属性--&gt;   &lt;association property=&quot;teacher&quot; javaType=&quot;Teacher&quot;&gt;       &lt;result property=&quot;name&quot; column=&quot;tname&quot;/&gt;   &lt;/association&gt;&lt;/resultMap&gt;</span><br></pre></td></tr></table></figure>
+
+<p>3、去mybatis-config文件中注入【此处应该处理过了】</p>
+<p>4、测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Testpublic void testGetStudents2()&#123;   SqlSession session = MybatisUtils.getSession();   StudentMapper mapper = session.getMapper(StudentMapper.class);   List&lt;Student&gt; students = mapper.getStudents2();   for (Student student : students)&#123;       System.out.println(               &quot;学生名:&quot;+ student.getName()                       +&quot;\t老师:&quot;+student.getTeacher().getName());  &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>小结</p>
+</blockquote>
+<p>按照查询进行嵌套处理就像SQL中的子查询</p>
+<p>按照结果进行嵌套处理就像SQL中的联表查询</p>
+<p>一对多处理</p>
+<h2 id="一对多的处理"><a href="#一对多的处理" class="headerlink" title="一对多的处理"></a>一对多的处理</h2><p>一对多的理解：</p>
+<ul>
+<li>一个老师拥有多个学生</li>
+<li>如果对于老师这边，就是一个一对多的现象，即从一个老师下面拥有一群学生（集合）！</li>
+</ul>
+<blockquote>
+<p>实体类编写</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Datapublic class Student &#123;   private int id;   private String name;   private int tid;&#125;</span><br><span class="line">@Data public class Teacher &#123;   private int id;   private String name;   //一个老师多个学生   private List&lt;Student&gt; students;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>….. 和之前一样，搭建测试的环境！</p>
+<blockquote>
+<p>按结果嵌套处理</p>
+</blockquote>
+<p>1、TeacherMapper接口编写方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//获取指定老师，及老师下的所有学生public Teacher getTeacher(int id);</span><br></pre></td></tr></table></figure>
+
+<p>2、编写接口对应的Mapper配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;mapper namespace=&quot;com.kuang.mapper.TeacherMapper&quot;&gt;   &lt;!--   思路:       1. 从学生表和老师表中查出学生id，学生姓名，老师姓名       2. 对查询出来的操作做结果集映射           1. 集合的话，使用collection！               JavaType和ofType都是用来指定对象类型的               JavaType是用来指定pojo中属性的类型               ofType指定的是映射到list集合属性中pojo的类型。   --&gt;   &lt;select id=&quot;getTeacher&quot; resultMap=&quot;TeacherStudent&quot;&gt;      select s.id sid, s.name sname , t.name tname, t.id tid      from student s,teacher t      where s.tid = t.id and t.id=#&#123;id&#125;   &lt;/select&gt;   &lt;resultMap id=&quot;TeacherStudent&quot; type=&quot;Teacher&quot;&gt;       &lt;result  property=&quot;name&quot; column=&quot;tname&quot;/&gt;       &lt;collection property=&quot;students&quot; ofType=&quot;Student&quot;&gt;           &lt;result property=&quot;id&quot; column=&quot;sid&quot; /&gt;           &lt;result property=&quot;name&quot; column=&quot;sname&quot; /&gt;           &lt;result property=&quot;tid&quot; column=&quot;tid&quot; /&gt;       &lt;/collection&gt;   &lt;/resultMap&gt;&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
+
+<p>3、将Mapper文件注册到MyBatis-config文件中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;mappers&gt;   &lt;mapper resource=&quot;mapper/TeacherMapper.xml&quot;/&gt;&lt;/mappers&gt;</span><br></pre></td></tr></table></figure>
+
+<p>4、测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Testpublic void testGetTeacher()&#123;   SqlSession session = MybatisUtils.getSession();   TeacherMapper mapper = session.getMapper(TeacherMapper.class);   Teacher teacher = mapper.getTeacher(1);   System.out.println(teacher.getName());   System.out.println(teacher.getStudents());&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>按查询嵌套处理</p>
+</blockquote>
+<p>1、TeacherMapper接口编写方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public Teacher getTeacher2(int id);</span><br></pre></td></tr></table></figure>
+
+<p>2、编写接口对应的Mapper配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;getTeacher2&quot; resultMap=&quot;TeacherStudent2&quot;&gt;select * from teacher where id = #&#123;id&#125;&lt;/select&gt;&lt;resultMap id=&quot;TeacherStudent2&quot; type=&quot;Teacher&quot;&gt;   &lt;!--column是一对多的外键 , 写的是一的主键的列名--&gt;   &lt;collection property=&quot;students&quot; javaType=&quot;ArrayList&quot; ofType=&quot;Student&quot;column=&quot;id&quot; select=&quot;getStudentByTeacherId&quot;/&gt;&lt;/resultMap&gt;&lt;select id=&quot;getStudentByTeacherId&quot; resultType=&quot;Student&quot;&gt;  select * from student where tid = #&#123;id&#125;&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+<p>3、将Mapper文件注册到MyBatis-config文件中</p>
+<p>4、测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Testpublic void testGetTeacher2()&#123;   SqlSession session = MybatisUtils.getSession();   TeacherMapper mapper = session.getMapper(TeacherMapper.class);   Teacher teacher = mapper.getTeacher2(1);   System.out.println(teacher.getName());   System.out.println(teacher.getStudents());&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>小结</p>
+</blockquote>
+<p>1、关联-association</p>
+<p>2、集合-collection</p>
+<p>3、所以association是用于一对一和多对一，而collection是用于一对多的关系</p>
+<p>4、JavaType和ofType都是用来指定对象类型的</p>
+<ul>
+<li>JavaType是用来指定pojo中属性的类型</li>
+<li>ofType指定的是映射到list集合属性中pojo的类型。</li>
+</ul>
+<p><strong>注意说明：</strong></p>
+<p>1、保证SQL的可读性，尽量通俗易懂</p>
+<p>2、根据实际要求，尽量编写性能更高的SQL语句</p>
+<p>3、注意属性名和字段不一致的问题</p>
+<p>4、注意一对多和多对一 中：字段和属性对应的问题</p>
+<p>5、尽量使用Log4j，通过日志来查看自己的错误</p>
+<p>一对多和多对一对于很多人来说是难点，一定要大量的做练习理解！</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/WeChat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mrzhaoc.github.io/2020/04/22/MyBatis05%EF%BC%9A%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%92%8C%E5%A4%9A%E5%AF%B9%E4%B8%80%E5%A4%84%E7%90%86/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis04%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.740Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/04/22/MyBatis06%EF%BC%9A%E5%8A%A8%E6%80%81SQL/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          MyBatis06：动态SQL
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/04/22/MyBatis04%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MyBatis04：使用注解开发</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis04%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/">MyBatis04：使用注解开发</a>
-    </h1>
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "https://mrzhaoc.github.io/2020/04/22/MyBatis05%EF%BC%9A%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%92%8C%E5%A4%9A%E5%AF%B9%E4%B8%80%E5%A4%84%E7%90%86/", 
+    sourceId: "MyBatis05：一对多和多对一处理",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis03%EF%BC%9AResultMap%E5%8F%8A%E5%88%86%E9%A1%B5/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.738Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis03%EF%BC%9AResultMap%E5%8F%8A%E5%88%86%E9%A1%B5/">MyBatis03：ResultMap及分页</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis02%EF%BC%9ACRUD%E6%93%8D%E4%BD%9C%E5%8F%8A%E9%85%8D%E7%BD%AE%E8%A7%A3%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.719Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis02%EF%BC%9ACRUD%E6%93%8D%E4%BD%9C%E5%8F%8A%E9%85%8D%E7%BD%AE%E8%A7%A3%E6%9E%90/">MyBatis02：CRUD操作及配置解析</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis01%EF%BC%9A%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.717Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis01%EF%BC%9A%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/">MyBatis01：第一个程序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis07%EF%BC%9A%E7%BC%93%E5%AD%98/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.715Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis07%EF%BC%9A%E7%BC%93%E5%AD%98/">MyBatis07：缓存</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2020-04-13T08:56:58.138Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/">简单实现验证码登录/简单实现验证码登录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/11/%E8%AF%BB%E4%B9%A6%E6%8A%A5%E5%91%8A/" class="archive-article-date">
-  	<time datetime="2020-04-11T14:39:15.533Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/11/%E8%AF%BB%E4%B9%A6%E6%8A%A5%E5%91%8A/">读书报告</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/08/Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" class="archive-article-date">
-  	<time datetime="2020-04-08T06:34:00.045Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/08/Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/">Lombok快速学习手册</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -464,8 +490,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

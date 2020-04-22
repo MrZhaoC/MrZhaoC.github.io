@@ -6,17 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://mrzhaoc.github.io">
-  <title>Archives | Hexo</title>
+  <title>MyBatis04：使用注解开发 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hexo����">
+  <meta name="description" content="狂神说MyBatis04：使用注解开发 基于MyBatis3.5.2版本   使用注解开发 上集回顾：狂神说MyBatis03：ResultMap及分页  面向接口编程   大家之前都学过面向对象编程，也学习过接口，但在真正的开发中，很多时候我们会选择面向接口编程 根本原因 :  解耦 , 可拓展 , 提高复用 , 分层开发中 , 上层不用管具体的实现 , 大家都遵守共同的标准 , 使得开发变得容">
 <meta name="keywords" content="hexo">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;archives&#x2F;index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBatis04：使用注解开发">
+<meta property="og:url" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;2020&#x2F;04&#x2F;22&#x2F;MyBatis04%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="hexo����">
+<meta property="og:description" content="狂神说MyBatis04：使用注解开发 基于MyBatis3.5.2版本   使用注解开发 上集回顾：狂神说MyBatis03：ResultMap及分页  面向接口编程   大家之前都学过面向对象编程，也学习过接口，但在真正的开发中，很多时候我们会选择面向接口编程 根本原因 :  解耦 , 可拓展 , 提高复用 , 分层开发中 , 上层不用管具体的实现 , 大家都遵守共同的标准 , 使得开发变得容">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_gif&#x2F;uJDAUKrGC7L1vFQMnaRIJSmeZ58T2eZicAHqMeOptckiacohSnX6DTIYSic2Uic7GLWuezVDk3bYqJa4vQwPwrLJXQ&#x2F;640?wx_fmt=gif&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_png&#x2F;uJDAUKrGC7LZwwtchlelS8kzAAyVia5uNnMiahVkdvictXZkDDWHQCwob9rMlKtxnhiaQee5Kxa6K0BCbHH2ibRERibQ&#x2F;640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_png&#x2F;uJDAUKrGC7LZwwtchlelS8kzAAyVia5uNeukjWMleICg2Jsm8hTI63hvVLiarGmD7zT1CmgXlUXSUbmdhialeIjpA&#x2F;640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_png&#x2F;uJDAUKrGC7LZwwtchlelS8kzAAyVia5uNvhic22X8ahJy5BdOfjy1LlDRfo8Nf3GOAzwALgvriau4SzmXZIhUUd2A&#x2F;640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1">
+<meta property="og:updated_time" content="2020-04-22T01:46:00.675Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_gif&#x2F;uJDAUKrGC7L1vFQMnaRIJSmeZ58T2eZicAHqMeOptckiacohSnX6DTIYSic2Uic7GLWuezVDk3bYqJa4vQwPwrLJXQ&#x2F;640?wx_fmt=gif&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -152,295 +158,313 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-MyBatis04：使用注解开发" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis06%EF%BC%9A%E5%8A%A8%E6%80%81SQL/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.743Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis06%EF%BC%9A%E5%8A%A8%E6%80%81SQL/">MyBatis06：动态SQL</a>
+    <h1 class="article-title" itemprop="name">
+      MyBatis04：使用注解开发
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis05%EF%BC%9A%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%92%8C%E5%A4%9A%E5%AF%B9%E4%B8%80%E5%A4%84%E7%90%86/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.742Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis05%EF%BC%9A%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%92%8C%E5%A4%9A%E5%AF%B9%E4%B8%80%E5%A4%84%E7%90%86/">MyBatis05：一对多和多对一处理</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis04%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/" class="archive-article-date">
+        
+        <a href="/2020/04/22/MyBatis04%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/" class="archive-article-date">
   	<time datetime="2020-04-22T01:49:44.740Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis04%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/">MyBatis04：使用注解开发</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="狂神说MyBatis04：使用注解开发"><a href="#狂神说MyBatis04：使用注解开发" class="headerlink" title="狂神说MyBatis04：使用注解开发"></a>狂神说MyBatis04：使用注解开发</h2><blockquote>
+<p>基于MyBatis3.5.2版本</p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/uJDAUKrGC7L1vFQMnaRIJSmeZ58T2eZicAHqMeOptckiacohSnX6DTIYSic2Uic7GLWuezVDk3bYqJa4vQwPwrLJXQ/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" alt="img"></p>
+<p>使用注解开发</p>
+<p>上集回顾：<a href="http://mp.weixin.qq.com/s?__biz=Mzg2NTAzMTExNg==&mid=2247484043&idx=1&sn=94dbbcbca7ae17c50aa66fd78c8ecaa3&chksm=ce610428f9168d3ea04245107dd5057e5cbb5b4193b295f7b7ea6002f98c8b35264924186c9a&scene=21#wechat_redirect" target="_blank" rel="noopener">狂神说MyBatis03：ResultMap及分页</a></p>
+<blockquote>
+<p>面向接口编程</p>
+</blockquote>
+<ul>
+<li>大家之前都学过面向对象编程，也学习过接口，但在真正的开发中，很多时候我们会选择面向接口编程</li>
+<li><strong>根本原因 :  解耦 , 可拓展 , 提高复用 , 分层开发中 , 上层不用管具体的实现 , 大家都遵守共同的标准 , 使得开发变得容易 , 规范性更好</strong></li>
+<li>在一个面向对象的系统中，系统的各种功能是由许许多多的不同对象协作完成的。在这种情况下，各个对象内部是如何实现自己的,对系统设计人员来讲就不那么重要了；</li>
+<li>而各个对象之间的协作关系则成为系统设计的关键。小到不同类之间的通信，大到各模块之间的交互，在系统设计之初都是要着重考虑的，这也是系统设计的主要工作内容。面向接口编程就是指按照这种思想来编程。</li>
+</ul>
+<p><strong>关于接口的理解</strong></p>
+<ul>
+<li><p>接口从更深层次的理解，应是定义（规范，约束）与实现（名实分离的原则）的分离。</p>
+</li>
+<li><p>接口的本身反映了系统设计人员对系统的抽象理解。</p>
+</li>
+<li><p>接口应有两类：</p>
+</li>
+<li><ul>
+<li>第一类是对一个个体的抽象，它可对应为一个抽象体(abstract class)；</li>
+<li>第二类是对一个个体某一方面的抽象，即形成一个抽象面（interface）；</li>
+</ul>
+</li>
+<li><p>一个体有可能有多个抽象面。抽象体与抽象面是有区别的。</p>
+</li>
+</ul>
+<p><strong>三个面向区别</strong></p>
+<ul>
+<li><p>面向对象是指，我们考虑问题时，以对象为单位，考虑它的属性及方法 .</p>
+</li>
+<li><p>面向过程是指，我们考虑问题时，以一个具体的流程（事务过程）为单位，考虑它的实现 .</p>
+</li>
+<li><p>接口设计与非接口设计是针对复用技术而言的，与面向对象（过程）不是一个问题.更多的体现就是对系统整体的架构</p>
+</li>
+</ul>
+<blockquote>
+<p>利用注解开发</p>
+</blockquote>
+<ul>
+<li><p><strong>mybatis最初配置信息是基于 XML ,映射语句(SQL)也是定义在 XML 中的。而到MyBatis 3提供了新的基于注解的配置。不幸的是，Java 注解的的表达力和灵活性十分有限。最强大的 MyBatis 映射并不能用注解来构建</strong></p>
+</li>
+<li><p>sql 类型主要分成 :</p>
+</li>
+<li><ul>
+<li>@select ()</li>
+<li>@update ()</li>
+<li>@Insert ()</li>
+<li>@delete ()</li>
+</ul>
+</li>
+</ul>
+<p><strong>注意：</strong>利用注解开发就不需要mapper.xml映射文件了 .</p>
+<p>1、我们在我们的接口中添加注解</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//查询全部用户@Select(&quot;select id,name,pwd password from user&quot;)public List&lt;User&gt; getAllUser();</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<p>2、在mybatis的核心配置文件中注入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--使用class绑定接口--&gt;&lt;mappers&gt;   &lt;mapper class=&quot;com.kuang.mapper.UserMapper&quot;/&gt;&lt;/mappers&gt;</span><br></pre></td></tr></table></figure>
 
+<p>3、我们去进行测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Testpublic void testGetAllUser() &#123;   SqlSession session = MybatisUtils.getSession();   //本质上利用了jvm的动态代理机制   UserMapper mapper = session.getMapper(UserMapper.class);   List&lt;User&gt; users = mapper.getAllUser();   for (User user : users)&#123;       System.out.println(user);  &#125;   session.close();&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4、利用Debug查看本质</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7LZwwtchlelS8kzAAyVia5uNnMiahVkdvictXZkDDWHQCwob9rMlKtxnhiaQee5Kxa6K0BCbHH2ibRERibQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>5、本质上利用了jvm的动态代理机制</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7LZwwtchlelS8kzAAyVia5uNeukjWMleICg2Jsm8hTI63hvVLiarGmD7zT1CmgXlUXSUbmdhialeIjpA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>6、Mybatis详细的执行流程</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7LZwwtchlelS8kzAAyVia5uNvhic22X8ahJy5BdOfjy1LlDRfo8Nf3GOAzwALgvriau4SzmXZIhUUd2A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<blockquote>
+<p>注解增删改</p>
+</blockquote>
+<p>改造MybatisUtils工具类的getSession( ) 方法，重载实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//获取SqlSession连接  public static SqlSession getSession()&#123;      return getSession(true); //事务自动提交  &#125;   public static SqlSession getSession(boolean flag)&#123;      return sqlSessionFactory.openSession(flag);  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>【注意】确保实体类和数据库字段对应</p>
+<p><strong>查询：</strong></p>
+<p>1、编写接口方法注解</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//根据id查询用户@Select(&quot;select * from user where id = #&#123;id&#125;&quot;)User selectUserById(@Param(&quot;id&quot;) int id);</span><br></pre></td></tr></table></figure>
+
+<p>2、测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Testpublic void testSelectUserById() &#123;   SqlSession session = MybatisUtils.getSession();   UserMapper mapper = session.getMapper(UserMapper.class);   User user = mapper.selectUserById(1);   System.out.println(user);   session.close();&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>新增：</strong></p>
+<p>1、编写接口方法注解</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//添加一个用户@Insert(&quot;insert into user (id,name,pwd) values (#&#123;id&#125;,#&#123;name&#125;,#&#123;pwd&#125;)&quot;)int addUser(User user);</span><br></pre></td></tr></table></figure>
+
+<p>2、测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Testpublic void testAddUser() &#123;   SqlSession session = MybatisUtils.getSession();   UserMapper mapper = session.getMapper(UserMapper.class);   User user = new User(6, &quot;秦疆&quot;, &quot;123456&quot;);   mapper.addUser(user);   session.close();&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>修改：</strong></p>
+<p>1、编写接口方法注解</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//修改一个用户@Update(&quot;update user set name=#&#123;name&#125;,pwd=#&#123;pwd&#125; where id = #&#123;id&#125;&quot;)int updateUser(User user);</span><br></pre></td></tr></table></figure>
+
+<p>2、测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Testpublic void testUpdateUser() &#123;   SqlSession session = MybatisUtils.getSession();   UserMapper mapper = session.getMapper(UserMapper.class);   User user = new User(6, &quot;秦疆&quot;, &quot;zxcvbn&quot;);   mapper.updateUser(user);   session.close();&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>删除：</strong></p>
+<p>1、编写接口方法注解</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//根据id删除用@Delete(&quot;delete from user where id = #&#123;id&#125;&quot;)int deleteUser(@Param(&quot;id&quot;)int id);</span><br></pre></td></tr></table></figure>
+
+<p>2、测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Testpublic void testDeleteUser() &#123;   SqlSession session = MybatisUtils.getSession();   UserMapper mapper = session.getMapper(UserMapper.class);   mapper.deleteUser(6);      session.close();&#125;</span><br></pre></td></tr></table></figure>
+
+<p>【注意点：增删改一定记得对事务的处理】</p>
+<blockquote>
+<p>关于@Param</p>
+</blockquote>
+<p>@Param注解用于给方法参数起一个名字。以下是总结的使用原则：</p>
+<ul>
+<li>在方法只接受一个参数的情况下，可以不使用@Param。</li>
+<li>在方法接受多个参数的情况下，建议一定要使用@Param注解给参数命名。</li>
+<li>如果参数是 JavaBean ， 则不能使用@Param。</li>
+<li>不使用@Param注解时，参数只能有一个，并且是Javabean。</li>
+</ul>
+<blockquote>
+<p>#与$的区别</p>
+</blockquote>
+<ul>
+<li><p>#{} 的作用主要是替换预编译语句(PrepareStatement)中的占位符? 【推荐使用】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO user (name) VALUES (#&#123;name&#125;);INSERT INTO user (name) VALUES (?);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>${} 的作用是直接进行字符串替换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO user (name) VALUES (&apos;$&#123;name&#125;&apos;);INSERT INTO user (name) VALUES (&apos;kuangshen&apos;);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<blockquote>
+<p>使用注解和配置文件协同开发，才是MyBatis的最佳实践！</p>
+</blockquote>
+<p>使用注解开发可以提高我们的开发效率，可以合理使用哦！</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/WeChat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mrzhaoc.github.io/2020/04/22/MyBatis04%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis03%EF%BC%9AResultMap%E5%8F%8A%E5%88%86%E9%A1%B5/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.738Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/04/22/MyBatis05%EF%BC%9A%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%92%8C%E5%A4%9A%E5%AF%B9%E4%B8%80%E5%A4%84%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          MyBatis05：一对多和多对一处理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/04/22/MyBatis03%EF%BC%9AResultMap%E5%8F%8A%E5%88%86%E9%A1%B5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MyBatis03：ResultMap及分页</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis03%EF%BC%9AResultMap%E5%8F%8A%E5%88%86%E9%A1%B5/">MyBatis03：ResultMap及分页</a>
-    </h1>
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "https://mrzhaoc.github.io/2020/04/22/MyBatis04%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/", 
+    sourceId: "MyBatis04：使用注解开发",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis02%EF%BC%9ACRUD%E6%93%8D%E4%BD%9C%E5%8F%8A%E9%85%8D%E7%BD%AE%E8%A7%A3%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.719Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis02%EF%BC%9ACRUD%E6%93%8D%E4%BD%9C%E5%8F%8A%E9%85%8D%E7%BD%AE%E8%A7%A3%E6%9E%90/">MyBatis02：CRUD操作及配置解析</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis01%EF%BC%9A%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.717Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis01%EF%BC%9A%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/">MyBatis01：第一个程序</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis07%EF%BC%9A%E7%BC%93%E5%AD%98/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.715Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis07%EF%BC%9A%E7%BC%93%E5%AD%98/">MyBatis07：缓存</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2020-04-13T08:56:58.138Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/">简单实现验证码登录/简单实现验证码登录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/11/%E8%AF%BB%E4%B9%A6%E6%8A%A5%E5%91%8A/" class="archive-article-date">
-  	<time datetime="2020-04-11T14:39:15.533Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/11/%E8%AF%BB%E4%B9%A6%E6%8A%A5%E5%91%8A/">读书报告</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/08/Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" class="archive-article-date">
-  	<time datetime="2020-04-08T06:34:00.045Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/08/Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/">Lombok快速学习手册</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -464,8 +488,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

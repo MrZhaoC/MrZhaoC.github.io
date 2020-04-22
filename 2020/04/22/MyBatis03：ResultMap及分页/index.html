@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://mrzhaoc.github.io">
-  <title>Archives | Hexo</title>
+  <title>MyBatis03：ResultMap及分页 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hexo����">
+  <meta name="description" content="狂神说MyBatis03：ResultMap及分页 基于MyBatis3.5.2版本   ResultMap 上集回顾：狂神说MyBatis02：CRUD操作及配置解析  查询为null问题  要解决的问题：属性名和字段名不一致 环境：新建一个项目，将之前的项目拷贝过来 1、查看之前的数据库的字段名  2、Java中的实体类设计 1public class User &amp;#123;   privat">
 <meta name="keywords" content="hexo">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;archives&#x2F;index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBatis03：ResultMap及分页">
+<meta property="og:url" content="https:&#x2F;&#x2F;mrzhaoc.github.io&#x2F;2020&#x2F;04&#x2F;22&#x2F;MyBatis03%EF%BC%9AResultMap%E5%8F%8A%E5%88%86%E9%A1%B5&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="hexo����">
+<meta property="og:description" content="狂神说MyBatis03：ResultMap及分页 基于MyBatis3.5.2版本   ResultMap 上集回顾：狂神说MyBatis02：CRUD操作及配置解析  查询为null问题  要解决的问题：属性名和字段名不一致 环境：新建一个项目，将之前的项目拷贝过来 1、查看之前的数据库的字段名  2、Java中的实体类设计 1public class User &amp;#123;   privat">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_gif&#x2F;uJDAUKrGC7L1vFQMnaRIJSmeZ58T2eZicAHqMeOptckiacohSnX6DTIYSic2Uic7GLWuezVDk3bYqJa4vQwPwrLJXQ&#x2F;640?wx_fmt=gif&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_png&#x2F;uJDAUKrGC7KdXPq6whFkfHe43CtgZMJrr62lCnbfxl25aQ4ZDwlU4JiaMZHs3nqAoNxFsJYZRC4Cm11uSH0USNQ&#x2F;640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_png&#x2F;uJDAUKrGC7KdXPq6whFkfHe43CtgZMJreJromy8xt3CUoLOib5TDKrge5D8oQXnKkHnMa8etVwtnsbgWDanSAFA&#x2F;640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1">
+<meta property="og:updated_time" content="2020-04-22T01:45:08.960Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_gif&#x2F;uJDAUKrGC7L1vFQMnaRIJSmeZ58T2eZicAHqMeOptckiacohSnX6DTIYSic2Uic7GLWuezVDk3bYqJa4vQwPwrLJXQ&#x2F;640?wx_fmt=gif&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -152,295 +157,347 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-MyBatis03：ResultMap及分页" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis06%EF%BC%9A%E5%8A%A8%E6%80%81SQL/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.743Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis06%EF%BC%9A%E5%8A%A8%E6%80%81SQL/">MyBatis06：动态SQL</a>
+    <h1 class="article-title" itemprop="name">
+      MyBatis03：ResultMap及分页
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis05%EF%BC%9A%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%92%8C%E5%A4%9A%E5%AF%B9%E4%B8%80%E5%A4%84%E7%90%86/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.742Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis05%EF%BC%9A%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%92%8C%E5%A4%9A%E5%AF%B9%E4%B8%80%E5%A4%84%E7%90%86/">MyBatis05：一对多和多对一处理</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis04%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.740Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis04%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/">MyBatis04：使用注解开发</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis03%EF%BC%9AResultMap%E5%8F%8A%E5%88%86%E9%A1%B5/" class="archive-article-date">
+        
+        <a href="/2020/04/22/MyBatis03%EF%BC%9AResultMap%E5%8F%8A%E5%88%86%E9%A1%B5/" class="archive-article-date">
   	<time datetime="2020-04-22T01:49:44.738Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis03%EF%BC%9AResultMap%E5%8F%8A%E5%88%86%E9%A1%B5/">MyBatis03：ResultMap及分页</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="狂神说MyBatis03：ResultMap及分页"><a href="#狂神说MyBatis03：ResultMap及分页" class="headerlink" title="狂神说MyBatis03：ResultMap及分页"></a>狂神说MyBatis03：ResultMap及分页</h2><blockquote>
+<p>基于MyBatis3.5.2版本</p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/uJDAUKrGC7L1vFQMnaRIJSmeZ58T2eZicAHqMeOptckiacohSnX6DTIYSic2Uic7GLWuezVDk3bYqJa4vQwPwrLJXQ/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" alt="img"></p>
+<p>ResultMap</p>
+<p>上集回顾：<a href="http://mp.weixin.qq.com/s?__biz=Mzg2NTAzMTExNg==&mid=2247484037&idx=1&sn=cc4bda4e560702e8f7b3e74d3838929f&chksm=ce610426f9168d30c0d51556473c19a779046005d9b57708cd7ad790b21ed63ec72aa7ed9663&scene=21#wechat_redirect" target="_blank" rel="noopener">狂神说MyBatis02：CRUD操作及配置解析</a></p>
+<blockquote>
+<p>查询为null问题</p>
+</blockquote>
+<p><strong>要解决的问题：属性名和字段名不一致</strong></p>
+<p>环境：新建一个项目，将之前的项目拷贝过来</p>
+<p>1、查看之前的数据库的字段名</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7KdXPq6whFkfHe43CtgZMJrr62lCnbfxl25aQ4ZDwlU4JiaMZHs3nqAoNxFsJYZRC4Cm11uSH0USNQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>2、Java中的实体类设计</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class User &#123;   private int id;  //id   private String name;   //姓名   private String password;   //密码和数据库不一样！      //构造   //set/get   //toString()&#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<p>3、接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//根据id查询用户User selectUserById(int id);</span><br></pre></td></tr></table></figure>
 
+<p>4、mapper映射文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;selectUserById&quot; resultType=&quot;user&quot;&gt;  select * from user where id = #&#123;id&#125;&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+<p>5、测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Testpublic void testSelectUserById() &#123;   SqlSession session = MybatisUtils.getSession();  //获取SqlSession连接   UserMapper mapper = session.getMapper(UserMapper.class);   User user = mapper.selectUserById(1);   System.out.println(user);   session.close();&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>结果:</strong></p>
+<ul>
+<li>User{id=1, name=’狂神’, password=’null’}</li>
+<li>查询出来发现 password 为空 . 说明出现了问题！</li>
+</ul>
+<p><strong>分析：</strong></p>
+<ul>
+<li><p>select * from user where id = #{id} 可以看做</p>
+<p>select  id,name,pwd  from user where id = #{id}</p>
+</li>
+<li><p>mybatis会根据这些查询的列名(会将列名转化为小写,数据库不区分大小写) , 去对应的实体类中查找相应列名的set方法设值 , 由于找不到setPwd() , 所以password返回null ; 【自动映射】</p>
+</li>
+</ul>
+<blockquote>
+<p>解决方案</p>
+</blockquote>
+<p>方案一：为列名指定别名 , 别名和java实体类的属性名一致 .</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;selectUserById&quot; resultType=&quot;User&quot;&gt;  select id , name , pwd as password from user where id = #&#123;id&#125;&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>方案二：使用结果集映射-&gt;ResultMap</strong> 【推荐】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap id=&quot;UserMap&quot; type=&quot;User&quot;&gt;   &lt;!-- id为主键 --&gt;   &lt;id column=&quot;id&quot; property=&quot;id&quot;/&gt;   &lt;!-- column是数据库表的列名 , property是对应实体类的属性名 --&gt;   &lt;result column=&quot;name&quot; property=&quot;name&quot;/&gt;   &lt;result column=&quot;pwd&quot; property=&quot;password&quot;/&gt;&lt;/resultMap&gt;&lt;select id=&quot;selectUserById&quot; resultMap=&quot;UserMap&quot;&gt;  select id , name , pwd from user where id = #&#123;id&#125;&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>ResultMap</p>
+</blockquote>
+<p><strong>自动映射</strong></p>
+<ul>
+<li><code>resultMap</code> 元素是 MyBatis 中最重要最强大的元素。它可以让你从 90% 的 JDBC <code>ResultSets</code> 数据提取代码中解放出来。</li>
+<li>实际上，在为一些比如连接的复杂语句编写映射代码的时候，一份 <code>resultMap</code> 能够代替实现同等功能的长达数千行的代码。</li>
+<li>ResultMap 的设计思想是，对于简单的语句根本不需要配置显式的结果映射，而对于复杂一点的语句只需要描述它们的关系就行了。</li>
+</ul>
+<p>你已经见过简单映射语句的示例了，但并没有显式指定 <code>resultMap</code>。比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;selectUserById&quot; resultType=&quot;map&quot;&gt;select id , name , pwd  from user  where id = #&#123;id&#125;&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+<p>上述语句只是简单地将所有的列映射到 <code>HashMap</code> 的键上，这由 <code>resultType</code> 属性指定。虽然在大部分情况下都够用，但是 HashMap 不是一个很好的模型。你的程序更可能会使用 JavaBean 或 POJO（Plain Old Java Objects，普通老式 Java 对象）作为模型。</p>
+<p><code>ResultMap</code> 最优秀的地方在于，虽然你已经对它相当了解了，但是根本就不需要显式地用到他们。</p>
+<p><strong>手动映射</strong></p>
+<p>1、返回值类型为resultMap</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;selectUserById&quot; resultMap=&quot;UserMap&quot;&gt;  select id , name , pwd from user where id = #&#123;id&#125;&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2、编写resultMap，实现手动映射！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap id=&quot;UserMap&quot; type=&quot;User&quot;&gt;   &lt;!-- id为主键 --&gt;   &lt;id column=&quot;id&quot; property=&quot;id&quot;/&gt;   &lt;!-- column是数据库表的列名 , property是对应实体类的属性名 --&gt;   &lt;result column=&quot;name&quot; property=&quot;name&quot;/&gt;   &lt;result column=&quot;pwd&quot; property=&quot;password&quot;/&gt;&lt;/resultMap&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如果世界总是这么简单就好了。但是肯定不是的，数据库中，存在一对多，多对一的情况，我们之后会使用到一些高级的结果集映射，association，collection这些，我们将在之后讲解，今天你们需要把这些知识都消化掉才是最重要的！理解结果集映射的这个概念！</p>
+<p>分页的几种方式</p>
+<blockquote>
+<p>日志工厂</p>
+</blockquote>
+<p>思考：我们在测试SQL的时候，要是能够在控制台输出 SQL 的话，是不是就能够有更快的排错效率？</p>
+<p>如果一个 数据库相关的操作出现了问题，我们可以根据输出的SQL语句快速排查问题。</p>
+<p>对于以往的开发过程，我们会经常使用到debug模式来调节，跟踪我们的代码执行过程。但是现在使用Mybatis是基于接口，配置文件的源代码执行过程。因此，我们必须选择日志工具来作为我们开发，调节程序的工具。</p>
+<p>Mybatis内置的日志工厂提供日志功能，具体的日志实现有以下几种工具：</p>
+<ul>
+<li>SLF4J</li>
+<li>Apache Commons Logging</li>
+<li>Log4j 2</li>
+<li>Log4j</li>
+<li>JDK logging</li>
+</ul>
+<p>具体选择哪个日志实现工具由MyBatis的内置日志工厂确定。它会使用最先找到的（按上文列举的顺序查找）。如果一个都未找到，日志功能就会被禁用。</p>
+<p><strong>标准日志实现</strong></p>
+<p>指定 MyBatis 应该使用哪个日志记录实现。如果此设置不存在，则会自动发现日志记录实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;settings&gt;       &lt;setting name=&quot;logImpl&quot; value=&quot;STDOUT_LOGGING&quot;/&gt;&lt;/settings&gt;</span><br></pre></td></tr></table></figure>
+
+<p>测试，可以看到控制台有大量的输出！我们可以通过这些输出来判断程序到底哪里出了Bug</p>
+<blockquote>
+<p>Log4j</p>
+</blockquote>
+<p><strong>简介：</strong></p>
+<ul>
+<li>Log4j是Apache的一个开源项目</li>
+<li>通过使用Log4j，我们可以控制日志信息输送的目的地：控制台，文本，GUI组件….</li>
+<li>我们也可以控制每一条日志的输出格式；</li>
+<li>通过定义每一条日志信息的级别，我们能够更加细致地控制日志的生成过程。最令人感兴趣的就是，这些可以通过一个配置文件来灵活地进行配置，而不需要修改应用的代码。</li>
+</ul>
+<p><strong>使用步骤：</strong></p>
+<p>1、导入log4j的包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;   &lt;groupId&gt;log4j&lt;/groupId&gt;   &lt;artifactId&gt;log4j&lt;/artifactId&gt;   &lt;version&gt;1.2.17&lt;/version&gt;&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2、配置文件编写</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#将等级为DEBUG的日志信息输出到console和file这两个目的地，console和file的定义在下面的代码log4j.rootLogger=DEBUG,console,file#控制台输出的相关设置log4j.appender.console = org.apache.log4j.ConsoleAppenderlog4j.appender.console.Target = System.outlog4j.appender.console.Threshold=DEBUGlog4j.appender.console.layout = org.apache.log4j.PatternLayoutlog4j.appender.console.layout.ConversionPattern=[%c]-%m%n#文件输出的相关设置log4j.appender.file = org.apache.log4j.RollingFileAppenderlog4j.appender.file.File=./log/kuang.loglog4j.appender.file.MaxFileSize=10mblog4j.appender.file.Threshold=DEBUGlog4j.appender.file.layout=org.apache.log4j.PatternLayoutlog4j.appender.file.layout.ConversionPattern=[%p][%d&#123;yy-MM-dd&#125;][%c]%m%n#日志输出级别log4j.logger.org.mybatis=DEBUGlog4j.logger.java.sql=DEBUGlog4j.logger.java.sql.Statement=DEBUGlog4j.logger.java.sql.ResultSet=DEBUGlog4j.logger.java.sql.PreparedStatement=DEBUG</span><br></pre></td></tr></table></figure>
+
+<p>3、setting设置日志实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;settings&gt;   &lt;setting name=&quot;logImpl&quot; value=&quot;LOG4J&quot;/&gt;&lt;/settings&gt;</span><br></pre></td></tr></table></figure>
+
+<p>4、在程序中使用Log4j进行输出！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//注意导包：org.apache.log4j.Loggerstatic Logger logger = Logger.getLogger(MyTest.class);@Testpublic void selectUser() &#123;   logger.info(&quot;info：进入selectUser方法&quot;);   logger.debug(&quot;debug：进入selectUser方法&quot;);   logger.error(&quot;error: 进入selectUser方法&quot;);   SqlSession session = MybatisUtils.getSession();   UserMapper mapper = session.getMapper(UserMapper.class);   List&lt;User&gt; users = mapper.selectUser();   for (User user: users)&#123;       System.out.println(user);  &#125;   session.close();&#125;</span><br></pre></td></tr></table></figure>
+
+<p>5、测试，看控制台输出！</p>
+<ul>
+<li>使用Log4j 输出日志</li>
+<li>可以看到还生成了一个日志的文件 【需要修改file的日志级别】</li>
+</ul>
+<blockquote>
+<p>limit实现分页</p>
+</blockquote>
+<p><strong>思考：为什么需要分页？</strong></p>
+<p>在学习mybatis等持久层框架的时候，会经常对数据进行增删改查操作，使用最多的是对数据库进行查询操作，如果查询大量数据的时候，我们往往使用分页进行查询，也就是每次处理小部分数据，这样对数据库压力就在可控范围内。</p>
+<p><strong>使用Limit实现分页</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#语法SELECT * FROM table LIMIT stratIndex，pageSizeSELECT * FROM table LIMIT 5,10; // 检索记录行 6-15  #为了检索从某一个偏移量到记录集的结束所有的记录行，可以指定第二个参数为 -1：   SELECT * FROM table LIMIT 95,-1; // 检索记录行 96-last.  #如果只给定一个参数，它表示返回最大的记录行数目：   SELECT * FROM table LIMIT 5; //检索前 5 个记录行  #换句话说，LIMIT n 等价于 LIMIT 0,n。</span><br></pre></td></tr></table></figure>
+
+<p><strong>步骤：</strong></p>
+<p>1、修改Mapper文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;selectUser&quot; parameterType=&quot;map&quot; resultType=&quot;user&quot;&gt;  select * from user limit #&#123;startIndex&#125;,#&#123;pageSize&#125;&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2、Mapper接口，参数为map</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//选择全部用户实现分页List&lt;User&gt; selectUser(Map&lt;String,Integer&gt; map);</span><br></pre></td></tr></table></figure>
+
+<p>3、在测试类中传入参数测试</p>
+<ul>
+<li>推断：起始位置 =  （当前页面 - 1 ） * 页面大小</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//分页查询 , 两个参数startIndex , pageSize@Testpublic void testSelectUser() &#123;   SqlSession session = MybatisUtils.getSession();   UserMapper mapper = session.getMapper(UserMapper.class);   int currentPage = 1;  //第几页   int pageSize = 2;  //每页显示几个   Map&lt;String,Integer&gt; map = new HashMap&lt;String,Integer&gt;();   map.put(&quot;startIndex&quot;,(currentPage-1)*pageSize);   map.put(&quot;pageSize&quot;,pageSize);   List&lt;User&gt; users = mapper.selectUser(map);   for (User user: users)&#123;       System.out.println(user);  &#125;   session.close();&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>RowBounds分页</p>
+</blockquote>
+<p>我们除了使用Limit在SQL层面实现分页，也可以使用RowBounds在Java代码层面实现分页，当然此种方式作为了解即可。我们来看下如何实现的！</p>
+<p><strong>步骤：</strong></p>
+<p>1、mapper接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//选择全部用户RowBounds实现分页List&lt;User&gt; getUserByRowBounds();</span><br></pre></td></tr></table></figure>
+
+<p>2、mapper文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;getUserByRowBounds&quot; resultType=&quot;user&quot;&gt;select * from user&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+<p>3、测试类</p>
+<p>在这里，我们需要使用RowBounds类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Testpublic void testUserByRowBounds() &#123;   SqlSession session = MybatisUtils.getSession();   int currentPage = 2;  //第几页   int pageSize = 2;  //每页显示几个   RowBounds rowBounds = new RowBounds((currentPage-1)*pageSize,pageSize);   //通过session.**方法进行传递rowBounds，[此种方式现在已经不推荐使用了]   List&lt;User&gt; users =session.selectList(&quot;com.kuang.mapper.UserMapper.getUserByRowBounds&quot;, null,rowBounds);   for (User user: users)&#123;       System.out.println(user);  &#125;   session.close();&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>PageHelper</p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7KdXPq6whFkfHe43CtgZMJreJromy8xt3CUoLOib5TDKrge5D8oQXnKkHnMa8etVwtnsbgWDanSAFA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>了解即可，可以自己尝试使用</p>
+<p>官方文档：<a href="https://pagehelper.github.io/" target="_blank" rel="noopener">https://pagehelper.github.io/</a></p>
+<blockquote>
+<p>在MyBatisPlus中，我们也讲解到了分页实现，所以实现方式很多，看自己的理解和熟练程度进行掌握即可！</p>
+</blockquote>
+<p>会了简单的结果集映射，后面我们就可以实现一对多和多对一操作了</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/WeChat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mrzhaoc.github.io/2020/04/22/MyBatis03%EF%BC%9AResultMap%E5%8F%8A%E5%88%86%E9%A1%B5/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis02%EF%BC%9ACRUD%E6%93%8D%E4%BD%9C%E5%8F%8A%E9%85%8D%E7%BD%AE%E8%A7%A3%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.719Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/04/22/MyBatis04%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          MyBatis04：使用注解开发
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/04/22/MyBatis02%EF%BC%9ACRUD%E6%93%8D%E4%BD%9C%E5%8F%8A%E9%85%8D%E7%BD%AE%E8%A7%A3%E6%9E%90/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MyBatis02：CRUD操作及配置解析</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis02%EF%BC%9ACRUD%E6%93%8D%E4%BD%9C%E5%8F%8A%E9%85%8D%E7%BD%AE%E8%A7%A3%E6%9E%90/">MyBatis02：CRUD操作及配置解析</a>
-    </h1>
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "https://mrzhaoc.github.io/2020/04/22/MyBatis03%EF%BC%9AResultMap%E5%8F%8A%E5%88%86%E9%A1%B5/", 
+    sourceId: "MyBatis03：ResultMap及分页",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis01%EF%BC%9A%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.717Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis01%EF%BC%9A%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/">MyBatis01：第一个程序</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/MyBatis07%EF%BC%9A%E7%BC%93%E5%AD%98/" class="archive-article-date">
-  	<time datetime="2020-04-22T01:49:44.715Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/MyBatis07%EF%BC%9A%E7%BC%93%E5%AD%98/">MyBatis07：缓存</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2020-04-13T08:56:58.138Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/13/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/">简单实现验证码登录/简单实现验证码登录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/11/%E8%AF%BB%E4%B9%A6%E6%8A%A5%E5%91%8A/" class="archive-article-date">
-  	<time datetime="2020-04-11T14:39:15.533Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/11/%E8%AF%BB%E4%B9%A6%E6%8A%A5%E5%91%8A/">读书报告</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/08/Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" class="archive-article-date">
-  	<time datetime="2020-04-08T06:34:00.045Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/08/Lombok%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/">Lombok快速学习手册</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -464,8 +521,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
